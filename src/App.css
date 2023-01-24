@@ -3,3 +3,63 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+
+.appointments {
+  background-image: url('./images/appointment-bg.jpg');
+  background-color: #96bf02;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.appointments-green {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 15px #fff solid;
+  height: 100%;
+  background-color: #96bf02de;
+}
+
+.book-trainer .title h1 {
+  font-size: 45px;
+  letter-spacing: 1.5px;
+}
+
+select {
+  -moz-appearance: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  text-align: center;
+  -webkit-appearance: none;
+}
+
+.book-btn {
+  border: 2px solid #fff;
+  padding: 10px;
+  border-radius: 30px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #98bf0c;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.5s ease-in-out;
+}
+
+.book-btn:hover {
+  background-color: white;
+  color: #96bf02;
+}
+
+.booking-intro {
+  max-width: 800px;
+  letter-spacing: 0.4px;
+}

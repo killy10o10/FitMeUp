@@ -11,13 +11,13 @@ function Appointment() {
           </div>
           <div className="booking-buttons d-flex gap-3">
             <select className="book-btn select" name="trainers" id="trainers">
-              <option value="volvo">John Kibrige</option>
-              <option value="saab">Aakash Verma</option>
-              <option value="mercedes">Muskan Gupta</option>
-              <option value="audi">Danny Baraka</option>
-              <option value="audi">Quami Killy</option>
+              <option value="kampala">Kampala</option>
+              <option value="delhi">Delhi</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="congo">Congo</option>
+              <option value="accra">Accra</option>
             </select>
-            <button type="button" className="book-btn book">Book Now</button>
+            <button type="button" className="book-btn book">Search Trainer</button>
           </div>
         </div>
       </div>

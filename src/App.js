@@ -1,10 +1,12 @@
 import './App.css';
-import Appointment from './components/Appointment';
+import Home from './components/Home';
+// import Appointment from './components/Appointment';
 
 function App() {
   return (
     <div className="App">
-      <Appointment />
+      <Home />
+      {/* <Appointment /> */}
     </div>
   );
 }

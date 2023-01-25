@@ -21,7 +21,7 @@ const FitMeUpSlice = createSlice({
       return {
         ...payload,
       };
-    }),
+    });
   },
 });
 

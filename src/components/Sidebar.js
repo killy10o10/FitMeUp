@@ -7,8 +7,8 @@ const Sidebars = () => {
   const { collapseSidebar, collapsed } = useProSidebar();
 
   return (
-    <div className={`d-flex ${collapsed ? '' : ' shadow h-100'}`} style={{ minHeight: '0px' }}>
-      <Sidebar className="sidebar" backgroundColor="transparent" defaultCollapsed transitionDuration={10} collapsedWidth="0px">
+    <div className={`d-flex h-100 ${collapsed ? '' : ' shadow'}`} style={{ minHeight: '0px' }}>
+      <Sidebar className="sidebar" backgroundColor="transparent" defaultCollapsed transitionDuration={100} collapsedWidth="0px">
         <Menu className="pt-5">
           <MenuItem component={<Link to="/" />}> Trainer</MenuItem>
           <MenuItem component={<Link to="/" />}> User</MenuItem>

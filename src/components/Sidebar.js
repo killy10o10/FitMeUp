@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { Link } from 'react-router-dom';
 import {
   Sidebar, Menu, MenuItem, useProSidebar,
@@ -12,7 +13,7 @@ const Sidebars = () => {
         <Menu className="pt-5">
           <MenuItem component={<Link to="/" />}> Trainer</MenuItem>
           <MenuItem component={<Link to="/" />}> User</MenuItem>
-          <MenuItem component={<Link to="/" />}> Appoinment</MenuItem>
+          <MenuItem component={<Link to="/appointment" />}> Appoinment</MenuItem>
         </Menu>
       </Sidebar>
       <div className="position-relative">

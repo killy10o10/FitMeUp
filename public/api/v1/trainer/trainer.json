@@ -1,0 +1,78 @@
+[
+  {
+    "full_name": "Nick Mitchell",
+    "address": "London, UK",
+    "profile_pic": "https://drive.google.com/uc?id=1E1hMJpj4CxMa_BKyeTcxxDNVk3YCiEaf",
+    "date_of_birth": "09/11/1982",
+    "email_address": "",
+    "phone_number": "",
+    "height_in_meter": "1.88",
+    "weight_in_kg": "110",
+    "price": "49.99",
+    "bio": "Nick is the founder of Ultimate Performance. He's based in London but with facilities operating on four different continents globally. He's authored four books on body transformation and runs a team of 250 elite trainers.",
+    "speciality": [
+      "yoga", "fighter", "model", "nutritionist"
+    ]
+  
+  },
+  {
+    "full_name": "Alexia Clark",
+    "address": "Arizona, USA",
+    "profile_pic": "https://drive.google.com/uc?id=139XXYR_vyLiS0o5N5XXyF3lkYfUvQYbA",
+    "date_of_birth": "22/05/1990",
+    "email_address": "",
+    "phone_number": "",
+    "height_in_meter": "1.7",
+    "weight_in_kg": "52.5",
+    "price": "46.75",
+    "bio": "Alexia is an online fitness coach that provides new daily workouts, nutrition support and direct one to one accountability if you need it. Her goal is for you to feel constantly challenged and stimulated by your workouts.",
+    "speciality": [
+      "model", "yoga teacher"
+    ]
+  },
+  {
+    "full_name": "Matt Roberts",
+    "address": "Mayfair, UK",
+    "profile_pic": "https://drive.google.com/uc?id=1rKkcfOZ3j1OYmSlWLTzHTtfIIbgZOSgs",
+    "date_of_birth": "+44 2074919989",
+    "email_address": "evolution@mattroberts.co.uk",
+    "phone_number": "",
+    "height_in_meter": "",
+    "weight_in_kg": "",
+    "price": "55.5",
+    "bio": "London based trainer Matt trains a roster of celebrity clients, is a published author and has his own brand of fitness clothing. But despite this borderline celebrity trainer status, he remains grounded.",
+    "speciality": [
+      "model", "coach", "nutritionist", "conditioning"
+    ]
+  },
+  {
+    "full_name": "Emma Chan",
+    "address": "New South Wales, Australia",
+    "profile_pic": "https://drive.google.com/uc?id=1Dung01XKUDhmSOPX4_-68mdWg2RrMk36",
+    "date_of_birth": "",
+    "email_address": "",
+    "phone_number": "",
+    "height_in_meter": "",
+    "weight_in_kg": "",
+    "price": "44.99",
+    "bio": "Emma Chan is based at Coastal Fitness in Hong Kong. She's a health and performance specialist with a background in competitive volleyball. Her coaching and specialism was inspired by a sporting injury and her journey to recovery.",
+    "speciality": [
+      "coach", "nutritionist", "yoga", "volleyball player"
+    ]
+  },
+  {
+    "full_name": "Shawn Stafford",
+    "address": "UK",
+    "profile_pic": "https://drive.google.com/uc?id=1KP1fLcKibemwUxSaIaHUwN0zOvF0mjfb",
+    "date_of_birth": "",
+    "email_address": "support@shaunstaffordfit.com",
+    "phone_number": "",
+    "height_in_meter": "1.82",
+    "weight_in_kg": "88.5",
+    "price": "38.5",
+    "bio": "Growing up in a military family, health and fitness has always been a big part of my life. At school I played top level sport and carried this on through university where I participated in 5 winning Varsity Matches for Oxford University in Rugby and Track & Field.",
+    "speciality": [
+      "nutritionist"
+    ]
+  }
+]

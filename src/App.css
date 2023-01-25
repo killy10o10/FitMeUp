@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -6,4 +7,144 @@ body {
 
 #root {
   height: 100vh;
+}
+.appointments {
+  background-image: url('./images/appointment-bg.jpg');
+  background-color: #96bf02;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.appointments-green {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #96bf02de;
+}
+
+.book-trainer .title h1 {
+  font-size: 45px;
+  letter-spacing: 1.5px;
+}
+
+select {
+  -moz-appearance: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  text-align: center;
+  -webkit-appearance: none;
+}
+
+.book-btn {
+  border: 2px solid #fff;
+  padding: 10px;
+  border-radius: 30px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #98bf0c;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.5s ease-in-out;
+}
+
+.book-btn:hover {
+  background-color: white;
+  color: #96bf02;
+}
+
+.booking-intro {
+  max-width: 800px;
+  letter-spacing: 0.4px;
+}
+
+.trainer-card {
+  width: 220px;
+}
+
+.trainer-image-container {
+  width: 220px;
+  height: 220px;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: #96bf02;
+}
+
+.trainer-image-container img {
+  width: 80%;
+}
+
+.horizontal-border {
+  width: 80%;
+  border: 4px #96bf02;
+  border-style: dotted none none none;
+}
+
+.trainer-handles * {
+  border: rgb(221, 220, 220) solid 1px;
+  color: grey;
+  border-radius: 50%;
+  font-size: 20px;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ebebeb;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #98bf0ca7;
+}
+
+/* .rec-swipable {
+  gap: 5px;
+} */
+
+@media only screen and (min-width: 600px) {
+  .trainer-card {
+    width: 250px;
+  }
+
+  .trainer-image-container {
+    width: 250px;
+    height: 250px;
+    padding: 10px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .trainer-card {
+    width: 300px;
+  }
+
+  .trainer-image-container {
+    width: 300px;
+    height: 300px;
+    padding: 15px;
+  }
+
+  .rec-swipable {
+    gap: 3px;
+  }
 }

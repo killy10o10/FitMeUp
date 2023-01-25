@@ -17,6 +17,6 @@ const App = () => {
       {/* <Appointment /> */}
     </div>
   );
-}
+};
 
 export default App;

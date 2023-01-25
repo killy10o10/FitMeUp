@@ -5,9 +5,14 @@
 }
 
 .sidebar {
-  background-color: #96bf02;
+  background-color: #96bf02b5;
+  z-index: 1;
 }
 
 .sidebar-btn {
   left: -50px;
+}
+
+.hamburger i {
+  font-size: 30px;
 }

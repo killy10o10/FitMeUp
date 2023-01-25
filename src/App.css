@@ -8,6 +8,7 @@ body {
 #root {
   height: 100vh;
 }
+
 .appointments {
   background-image: url('./images/appointment-bg.jpg');
   background-color: #96bf02;
@@ -116,10 +117,6 @@ select {
   border-radius: 10px;
   background: #98bf0ca7;
 }
-
-/* .rec-swipable {
-  gap: 5px;
-} */
 
 @media only screen and (min-width: 600px) {
   .trainer-card {

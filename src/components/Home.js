@@ -1,7 +1,8 @@
+import React from 'react';
 import personalTrainer from '../images/personal-trainer.png';
 
-function Home() {
-  return (
+const Home = () => (
+  <>
     <section className="home container d-flex flex-column align-items-center">
       <div className="mt-5 pt-5">
         <h1 className="text-uppercase text-center ">Industry Level Trainers</h1>
@@ -70,7 +71,7 @@ function Home() {
         </div>
       </div>
     </section>
-  );
-}
+  </>
+);
 
 export default Home;

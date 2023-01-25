@@ -65,13 +65,13 @@ select {
 }
 
 .trainer-card {
-  max-width: 300px;
+  width: 220px;
 }
 
 .trainer-image-container {
-  max-width: 300px;
-  height: 300px;
-  padding: 15px;
+  width: 220px;
+  height: 220px;
+  padding: 8px;
   border-radius: 50%;
   background-color: #96bf02;
 }
@@ -112,4 +112,36 @@ select {
   -webkit-border-radius: 10px;
   border-radius: 10px;
   background: #98bf0ca7;
+}
+
+/* .rec-swipable {
+  gap: 5px;
+} */
+
+@media only screen and (min-width: 600px) {
+  .trainer-card {
+    width: 250px;
+  }
+
+  .trainer-image-container {
+    width: 250px;
+    height: 250px;
+    padding: 10px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .trainer-card {
+    width: 300px;
+  }
+
+  .trainer-image-container {
+    width: 300px;
+    height: 300px;
+    padding: 15px;
+  }
+
+  .rec-swipable {
+    gap: 3px;
+  }
 }

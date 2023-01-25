@@ -1,6 +1,15 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable camelcase */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import Carousel from 'react-elastic-carousel';
+
+const breakPoints = [
+  { width: 1, itemsToShow: 1 },
+  { width: 550, itemsToShow: 2 },
+  { width: 768, itemsToShow: 3 },
+  { width: 1200, itemsToShow: 4 },
+];
 
 const Home = (props) => {
   const { trainers } = props;
@@ -36,9 +45,9 @@ const Home = (props) => {
         <h1 className="text-uppercase text-center ">Industry Level Trainers</h1>
         <h4 className="text-secondary fs-5 text-center">Please select a trainer from list</h4>
       </div>
-      <div className="trainer-showcase p-5 d-flex gap-3">
+      <Carousel className="py-5 " breakPoints={breakPoints}>
         {trainerCard}
-      </div>
+      </Carousel>
     </section>
   );
 };

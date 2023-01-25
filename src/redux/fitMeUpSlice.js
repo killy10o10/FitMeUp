@@ -6,7 +6,7 @@ const TrainerRequestMethod = '/get/trainers';
 
 const initialState = [];
 
-const FitMeUpThunk = createAsyncThunk(TrainerRequestMethod, async () => {
+export const FitMeUpThunk = createAsyncThunk(TrainerRequestMethod, async () => {
   const trainerData = await (await (fetch(TrainerApiUrl))).json();
   return trainerData;
 });

@@ -18,9 +18,9 @@ const FitMeUpSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(FitMeUpThunk.fulfilled, (state, action) => {
       const { payload } = action;
-      return {
+      return [
         ...payload,
-      };
+      ];
     });
   },
 });

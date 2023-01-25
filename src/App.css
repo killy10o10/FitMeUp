@@ -97,7 +97,6 @@ select {
   cursor: pointer;
 }
 
-
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 10px;

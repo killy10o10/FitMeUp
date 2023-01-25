@@ -1,10 +1,20 @@
 import './App.css';
+import './assets/Main.css';
+import { BrowserRouter, Routes } from 'react-router-dom';
+import Sidebars from './components/Sidebar';
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-center">Fit Me UP</h1>
-    </div>
+    <>
+      <BrowserRouter>
+        <Sidebars />
+        <Routes>
+          {/* <Route path="/" element={<Trainer />} /> */}
+          {/* <Route path="/datepicker" element={<Datepickers />} /> */}
+          {/* <Route path="/appoiment" element={<Appoiment/>} /> */}
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

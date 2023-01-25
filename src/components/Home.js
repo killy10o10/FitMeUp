@@ -6,7 +6,7 @@ const Home = () => {
   const trainerSelector = useSelector((state) => state);
   const { trainers } = trainerSelector;
   console.log(trainers);
-  return (
+  return trainers.length > 0 ? (
     <>
       <section className="home container d-flex flex-column align-items-center">
         <div className="mt-5 pt-5">
@@ -17,7 +17,7 @@ const Home = () => {
           {/* card */}
           <div className="trainer-card gap-5 d-flex flex-column align-items-center justify-content-center">
             <div className="trainer-image-container d-flex align-items-center justify-content-center">
-              <img src={personalTrainer} alt="killy" />
+              <img src={trainers[0].profile_pic} alt="killy" />
             </div>
             <div className="trainer-info">
               <div className="trainer-name d-flex flex-column align-items-center p-2">
@@ -77,7 +77,7 @@ const Home = () => {
         </div>
       </section>
     </>
-  );
+  ) : <p>Loading Data...</p>;
 };
 
 export default Home;

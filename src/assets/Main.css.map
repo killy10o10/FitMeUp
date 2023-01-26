@@ -1,1 +1,1 @@
-{"version":3,"sources":["Main.scss","_Sidebar.scss","Main.css","_variable.scss"],"names":[],"mappings":"AAAQ,2FAAA;ACAR;EACI,mDAAA;ACEJ;;ADAA;EACE,yBEJgB;ADOlB;;ADAA;EACE,WAAA;ACGF","file":"Main.css"}
+{"version":3,"sources":["Main.scss","_Sidebar.scss","Main.css","_variable.scss","_date.scss"],"names":[],"mappings":"AAAQ,2FAAA;ACAR;EACE,mDAAA;ACEF;;ADCA;EACE,yBELgB;ADOlB;;ADCA;EACE,WAAA;ACEF;;AEXA;EACI,YAAA;AFcJ;;AEXA;EACI,yBDLc;ADmBlB","file":"Main.css"}

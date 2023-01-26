@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable camelcase */
 /* eslint-disable react/prop-types */
+import { NavLink } from 'react-router-dom';
 import Carousel from 'react-elastic-carousel';
 
 const breakPoints = [
@@ -18,9 +19,11 @@ const TrainerList = (props) => {
     } = item;
     return (
       <div key={full_name} className="trainer-card gap-5 d-flex flex-column align-items-center justify-content-center">
-        <div className="trainer-image-container d-flex align-items-center justify-content-center">
-          <img src={profile_pic} alt={full_name} />
-        </div>
+        <NavLink to="/trainerDetails" state={item}>
+          <div className="trainer-image-container d-flex align-items-center justify-content-center">
+            <img src={profile_pic} alt={full_name} />
+          </div>
+        </NavLink>
         <div className="trainer-info">
           <div className="trainer-name d-flex flex-column align-items-center p-2">
             <h2 className="text-center">{full_name}</h2>

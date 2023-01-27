@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
 .shadow {
   background-color: rgba(211, 211, 211, 0.5882352941);
 }
@@ -15,6 +16,22 @@
   height: 50vh;
 }
 
+.form {
+  padding-top: 15rem;
+}
+
 .date-button {
   background-color: #96bf02;
-}/*# sourceMappingURL=Main.css.map */
+}
+
+input::-moz-placeholder {
+  font-size: medium;
+}
+
+input:-ms-input-placeholder {
+  font-size: medium;
+}
+
+input::placeholder {
+  font-size: medium;
+}

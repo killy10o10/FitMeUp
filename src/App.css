@@ -18,6 +18,10 @@ body {
   height: 100vh;
 }
 
+.booking {
+  background-color: #96bf02;
+}
+
 .appointments-green {
   color: #fff;
   display: flex;

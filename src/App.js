@@ -9,6 +9,7 @@ import { FitMeUpThunk } from './redux/fitMeUpSlice';
 import Home from './components/Home';
 import Appointment from './components/Appointment';
 import Datepickers from './components/Datepicker';
+import TrainerDetails from './components/TrainerDetails';
 
 const App = () => {
   const trainersArray = useSelector((state) => state.trainers);
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/" element={<Home trainers={trainersArray} />} />
           <Route path="/date" element={<Datepickers />} />
           <Route path="/appointment" element={<Appointment />} />
+          <Route path="/trainerDetails" element={<TrainerDetails />} />
         </Routes>
       </BrowserRouter>
     </div>

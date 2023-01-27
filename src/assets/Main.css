@@ -5,7 +5,8 @@
 }
 
 .sidebar {
-  background-color: #96bf02;
+  background-color: #96bf02b5;
+  z-index: 1;
 }
 
 .sidebar-btn {
@@ -34,4 +35,7 @@ input:-ms-input-placeholder {
 
 input::placeholder {
   font-size: medium;
+}
+.hamburger i {
+  font-size: 30px;
 }

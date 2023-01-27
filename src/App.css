@@ -18,6 +18,10 @@ body {
   height: 100vh;
 }
 
+.booking {
+  background-color: #96bf02;
+}
+
 .appointments-green {
   color: #fff;
   display: flex;
@@ -101,6 +105,10 @@ select {
   cursor: pointer;
 }
 
+.trainer-details .trainer-img {
+  flex: 0.8;
+}
+
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 10px;
@@ -117,10 +125,6 @@ select {
   border-radius: 10px;
   background: #98bf0ca7;
 }
-
-/* .rec-swipable {
-  gap: 5px;
-} */
 
 @media only screen and (min-width: 600px) {
   .trainer-card {

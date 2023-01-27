@@ -19,7 +19,7 @@ const Sidebars = () => {
         <button
           type="button"
           onClick={() => collapseSidebar()}
-          className={`btn fs-3 ${collapsed ? '' : ' position-absolute z-3 sidebar-btn'}`}
+          className={`btn hamburger fs-3 ${collapsed ? '' : ' position-absolute z-3 sidebar-btn'}`}
         >
           <i className={`bi ${collapsed ? 'bi-list' : 'bi-x-lg'}`} />
         </button>

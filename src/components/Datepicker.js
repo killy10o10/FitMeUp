@@ -1,18 +1,13 @@
 import React from 'react';
 
 const Datepickers = () => (
-  <main className="d-flex justify-content-center align-items-center date-form">
-    <form action="/">
+  <main className="container date-form">
+    <form className="form">
       <div className="mb-3">
-        <label htmlFor="Start-date" className="form-label">
-          {' '}
-          Date:
-          <input type="date" name="date" id="Start-date" className="form-control" />
-        </label>
+        <label htmlFor="InputDate" className="form-label fs-4"> Date</label>
+        <input type="date" className="form-control fs-4 p-2" id="InputDate" aria-describedby="dateHelp" />
       </div>
-      <div className="mb-3">
-        <input type="submit" className="btn btn-outline-success text-white light date-button" />
-      </div>
+      <button type="submit" className="btn btn-outline-success text-white date-button fs-4">Submit</button>
     </form>
   </main>
 );

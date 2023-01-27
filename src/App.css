@@ -101,6 +101,10 @@ select {
   cursor: pointer;
 }
 
+.trainer-details .trainer-img {
+  flex: 0.8;
+}
+
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 10px;

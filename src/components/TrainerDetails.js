@@ -48,7 +48,7 @@ const TrainerDetails = () => {
         </div>
       </div>
       <div className={`position-absolute top-0 date-div ${displayStatus ? 'd-flex' : 'd-none'}`}>
-        <Datepickers />
+        <Datepickers displayHandlerProp={displayHandler} />
       </div>
     </section>
   );

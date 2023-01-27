@@ -13,6 +13,29 @@
   left: -50px;
 }
 
+.date-form {
+  height: 50vh;
+}
+
+.form {
+  padding-top: 15rem;
+}
+
+.date-button {
+  background-color: #96bf02;
+}
+
+input::-moz-placeholder {
+  font-size: medium;
+}
+
+input:-ms-input-placeholder {
+  font-size: medium;
+}
+
+input::placeholder {
+  font-size: medium;
+}
 .hamburger i {
   font-size: 30px;
 }

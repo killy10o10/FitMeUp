@@ -33,9 +33,10 @@ function Appointment({ trainers }) {
               <option value="mumbai">Mumbai</option>
               <option value="congo">Congo</option>
               <option value="accra">Accra</option>
+              <option value="New South Wales, Australia">New South Wales, Australia</option>
             </select>
             <button type="button" className="book-btn book">
-              <Link to="/search" state={{ from: trainer }}>Search Trainer</Link>
+              <Link to={`/search/?location=${selectedCity}`} state={{ from: trainer }}>Search Trainer</Link>
             </button>
           </div>
         </div>

@@ -8,7 +8,7 @@ const Sidebars = () => {
 
   return (
     <div className={`d-flex h-100 position-absolute ${collapsed ? '' : ' shadow'}`}>
-      <Sidebar className="sidebar" backgroundColor="transparent" defaultCollapsed transitionDuration={100} collapsedWidth="0px">
+      <Sidebar className="sidebar" backgroundColor="#96bf02c9" defaultCollapsed transitionDuration={100} collapsedWidth="0px">
         <Menu className="pt-5">
           <MenuItem component={<Link to="/" />} onClick={() => collapseSidebar()}> Trainer</MenuItem>
           <MenuItem component={<Link to="/date" />} onClick={() => collapseSidebar()}> Book</MenuItem>

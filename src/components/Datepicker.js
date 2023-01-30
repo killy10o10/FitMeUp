@@ -1,10 +1,12 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable react/prop-types */
+
 import React from 'react';
 
-const Datepickers = (props) => (
+const Datepickers = ({ displayHandlerProp }) => (
   <main className=" date-form">
     <div>
-      <button onClick={props.displayHandlerProp} className="btn text-white fs-4 float-end me-3">X</button>
+      <button onClick={displayHandlerProp} className="btn text-white fs-4 float-end me-3" type="button">X</button>
     </div>
     <form className="container form">
       <div className="mb-3">

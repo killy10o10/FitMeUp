@@ -17,6 +17,7 @@ const TrainerList = (props) => {
     const {
       full_name, profile_pic, bio,
     } = item;
+    const limitedBio = bio.split(' ').slice(0, 15).join(' ');
     return (
       <div key={full_name} className="trainer-card gap-5 d-flex flex-column align-items-center justify-content-center">
         <NavLink to="/trainerDetails" state={item}>
@@ -30,7 +31,10 @@ const TrainerList = (props) => {
             <hr className="horizontal-border" />
           </div>
           <div className="trainer-description">
-            <p className="text-center">{bio}</p>
+            <p className="text-center">
+              {limitedBio}
+              ...
+            </p>
           </div>
         </div>
       </div>

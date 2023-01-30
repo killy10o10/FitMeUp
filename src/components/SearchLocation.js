@@ -5,7 +5,6 @@ import Home from './Home';
 const SearchLocation = () => {
   const location = useLocation();
   const { from } = location.state;
-  console.log(from);
 
   return (
     <>

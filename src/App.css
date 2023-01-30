@@ -153,3 +153,10 @@ select {
     gap: 3px;
   }
 }
+
+@media screen and (min-width: 990px) and (max-width: 1200px) {
+  .trainer-description {
+    padding: 0px 20px;
+  }
+}
+

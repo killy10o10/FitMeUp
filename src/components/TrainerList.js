@@ -32,11 +32,6 @@ const TrainerList = (props) => {
           <div className="trainer-description">
             <p className="text-center">{bio}</p>
           </div>
-          <div className="trainer-handles d-flex align-items-center justify-content-center gap-1">
-            <i className="bi bi-twitter" />
-            <i className="bi bi-instagram" />
-            <i className="bi bi-telephone" />
-          </div>
         </div>
       </div>
     );

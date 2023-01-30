@@ -10,6 +10,7 @@ import Home from './components/Home';
 import Appointment from './components/Appointment';
 import Datepickers from './components/Datepicker';
 import TrainerDetails from './components/TrainerDetails';
+import SearchLocation from './components/SearchLocation';
 
 const App = () => {
   const trainersArray = useSelector((state) => state.trainers);
@@ -28,8 +29,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home trainers={trainersArray} />} />
           <Route path="/date" element={<Datepickers />} />
-          <Route path="/appointment" element={<Appointment />} />
+          <Route path="/appointment" element={<Appointment trainers={trainersArray} />} />
           <Route path="/trainerDetails" element={<TrainerDetails />} />
+          <Route path="/search" element={<SearchLocation />} />
         </Routes>
       </BrowserRouter>
     </div>

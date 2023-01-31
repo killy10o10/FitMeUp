@@ -9,6 +9,13 @@ body {
   height: 100vh;
 }
 
+/* shared css */
+.title-1 {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
 .appointments {
   background-image: url('./images/appointment-bg.jpg');
   background-color: #96bf02;
@@ -158,4 +165,53 @@ select {
   .trainer-description {
     padding: 0 20px;
   }
+}
+
+/* use animation */
+.textanimation{
+  text-align:center;
+}
+
+#container {
+  color:#999;
+  text-transform: uppercase;
+  font-size:30px;
+}
+
+#flip {
+  height:50px;
+  overflow:hidden;
+}
+
+#flip > div > div {
+  color:#fff;
+  padding:1px 12px;
+  height:45px;
+  margin-bottom:45px;
+  display:inline-block;
+}
+
+#flip div:first-child {
+  animation: show 7s linear infinite;
+}
+
+#flip div div {
+  background:#3b6d33;
+}
+#flip div:first-child div {
+  background:#00796b;
+}
+#flip div:last-child div {
+  background:#689f38;
+}
+
+@keyframes show {
+  0% {margin-top:-270px;}
+  5% {margin-top:-180px;}
+  33% {margin-top:-180px;}
+  38% {margin-top:-90px;}
+  66% {margin-top:-90px;}
+  71% {margin-top:0px;}
+  99.99% {margin-top:0px;}
+  100% {margin-top:-270px;}
 }

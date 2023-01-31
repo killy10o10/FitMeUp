@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Sidebars from './components/Sidebar';
 import { FitMeUpThunk } from './redux/fitMeUpSlice';
 import { SpecilatiyThunk } from './redux/specilatiySlice';
+import { userThunk } from './redux/userSlice';
 import Home from './components/Home';
 import Appointment from './components/Appointment';
 import Datepickers from './components/Datepicker';
@@ -18,6 +19,7 @@ import Trainer from './components/Trainer';
 const App = () => {
   const trainersArray = useSelector((state) => state.trainers);
   const specilatiyArray = useSelector((state) => state.specilatiys);
+  const userArray = useSelector((state) => state.users);
 
   const dispatch = useDispatch();
 
@@ -27,6 +29,9 @@ const App = () => {
     }
     if (specilatiyArray.length === 0) {
       dispatch(SpecilatiyThunk());
+    }
+    if (userArray.length === 0) {
+      dispatch(userThunk());
     }
   }, []);
 
@@ -41,7 +46,7 @@ const App = () => {
           <Route path="/trainerDetails" element={<TrainerDetails />} />
           <Route path="/search" element={<SearchLocation />} />
           <Route path="/specilatiy" element={<Specilatiy specilatiy={specilatiyArray} />} />
-          <Route path="/trainer" element={<Trainer trainers={trainersArray} />} />
+          <Route path="/trainer" element={<Trainer users={userArray} trainers={trainersArray} />} />
         </Routes>
       </BrowserRouter>
     </div>

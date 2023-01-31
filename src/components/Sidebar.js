@@ -10,9 +10,12 @@ const Sidebars = () => {
     <div className={`d-flex h-100 position-absolute ${collapsed ? '' : ' shadow'}`}>
       <Sidebar className="sidebar" backgroundColor="#96bf02c9" defaultCollapsed transitionDuration={100} collapsedWidth="0px">
         <Menu className="pt-5">
-          <MenuItem component={<Link to="/" />} onClick={() => collapseSidebar()}> Trainer</MenuItem>
+          <MenuItem component={<Link to="/" />} onClick={() => collapseSidebar()}> Home</MenuItem>
           <MenuItem component={<Link to="/date" />} onClick={() => collapseSidebar()}> Book</MenuItem>
           <MenuItem component={<Link to="/appointment" />} onClick={() => collapseSidebar()}> Appoinment</MenuItem>
+          <MenuItem component={<Link to="/specilatiy" />} onClick={() => collapseSidebar()}> Specilatiy</MenuItem>
+          <MenuItem component={<Link to="/trainer" />} onClick={() => collapseSidebar()}> Trainer</MenuItem>
+
         </Menu>
       </Sidebar>
       <div className="position-relative">

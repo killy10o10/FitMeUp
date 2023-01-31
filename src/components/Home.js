@@ -20,6 +20,12 @@ const Home = (props) => {
             </div>
           </div>
         </div>
+        <div className="cube" />
+        <div className="cube" />
+        <div className="cube" />
+        <div className="cube" />
+        <div className="cube" />
+        <div className="cube" />
         {/* fin */}
       </div>
       <TrainerList trainers={trainers} />

@@ -1,0 +1,23 @@
+[{
+    "id":1,
+    "full_name": "User1 ",
+    "address": "Delhi,India",
+    "profile_pic": "https://drive.google.com/uc?id=1FgGXNDA8hYAz95F5vDp2seV9pTP8InhA",
+    "date_of_birth": "09/11/1982",
+    "email_address": "",
+    "phone_number": "",
+    "height_in_meter": "1.88",
+    "weight_in_kg": "110"
+},
+{
+    "id":2,
+    "full_name": "User2 ",
+    "address": "Goa,India",
+    "profile_pic": "https://drive.google.com/uc?id=1FgGXNDA8hYAz95F5vDp2seV9pTP8InhA",
+    "date_of_birth": "09/11/1982",
+    "email_address": "",
+    "phone_number": "",
+    "height_in_meter": "1.88",
+    "weight_in_kg": "110"
+}
+]

@@ -7,7 +7,7 @@ const Sidebars = () => {
   const { collapseSidebar, collapsed } = useProSidebar();
 
   return (
-    <div className={`d-flex h-100 position-absolute ${collapsed ? '' : ' shadow'}`}>
+    <div className={`d-flex z-1 h-100 position-absolute ${collapsed ? '' : ' shadow'}`}>
       <Sidebar className="sidebar" backgroundColor="#96bf02c9" defaultCollapsed transitionDuration={100} collapsedWidth="0px">
         <Menu className="pt-5">
           <MenuItem component={<Link to="/" />} onClick={() => collapseSidebar()}> Home</MenuItem>
@@ -18,11 +18,11 @@ const Sidebars = () => {
 
         </Menu>
       </Sidebar>
-      <div className="position-relative">
+      <div className="position-relative z-3">
         <button
           type="button"
           onClick={() => collapseSidebar()}
-          className={`btn hamburger fs-3 ${collapsed ? '' : ' position-absolute z-3 sidebar-btn'}`}
+          className={`btn hamburger fs-3 ${collapsed ? '' : ' position-absolute sidebar-btn'}`}
         >
           <i className={`bi ${collapsed ? 'bi-list' : 'bi-x-lg'}`} />
         </button>

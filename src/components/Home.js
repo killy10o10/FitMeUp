@@ -14,9 +14,9 @@ const Home = (props) => {
           <div id="container">
             <h3 className="text-secondary fs-5">How simple it works?</h3>
             <div id="flip">
-              <div><div>1. Book Appointment 🧾</div></div>
               <div><div>3. Train with the Best 🏋🏼</div></div>
               <div><div>2. Get approved ✅</div></div>
+              <div><div>1. Book Appointment 🧾</div></div>
             </div>
           </div>
         </div>

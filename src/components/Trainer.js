@@ -32,8 +32,8 @@ const Trainer = ({ trainers, users }) => {
       </form>
       <p className="text-center p-3 fs-3"> Trainer List</p>
       <div className="border p-2 mt-3">
-        {trainers.map((el, index) => (
-          <div key={index} className="d-flex justify-content-between mb-3 border-bottom pb-2">
+        {trainers.map((el) => (
+          <div key={el.id} className="d-flex justify-content-between mb-3 border-bottom pb-2">
             <p>{el.full_name}</p>
             <button className="btn btn-danger" type="button">Delete</button>
           </div>

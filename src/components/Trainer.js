@@ -28,7 +28,7 @@ const Trainer = ({ trainers, users }) => {
           <label htmlFor="bio" className="form-label">Bio</label>
           <input type="text" className="form-control" id="bio" />
         </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-success">Submit</button>
       </form>
       <p className="text-center p-3 fs-3"> Trainer List</p>
       <div className="border p-2 mt-3">

@@ -13,6 +13,7 @@ import Datepickers from './components/Datepicker';
 import TrainerDetails from './components/TrainerDetails';
 import SearchLocation from './components/SearchLocation';
 import Specilatiy from './components/Specilatiy';
+import Trainer from './components/Trainer';
 
 const App = () => {
   const trainersArray = useSelector((state) => state.trainers);
@@ -40,6 +41,7 @@ const App = () => {
           <Route path="/trainerDetails" element={<TrainerDetails />} />
           <Route path="/search" element={<SearchLocation />} />
           <Route path="/specilatiy" element={<Specilatiy specilatiy={specilatiyArray} />} />
+          <Route path="/trainer" element={<Trainer trainers={trainersArray} />} />
         </Routes>
       </BrowserRouter>
     </div>

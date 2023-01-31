@@ -2,11 +2,11 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const SpecilatiyApiUrl = '/api/v1/trainer/specilatiy.json';
 
-const TrainerRequestMethod = '/get/specilatiys';
+const SpecilatiyRequestMethod = '/get/specilatiys';
 
 const initialState = [];
 
-export const SpecilatiyThunk = createAsyncThunk(TrainerRequestMethod, async () => {
+export const SpecilatiyThunk = createAsyncThunk(SpecilatiyRequestMethod, async () => {
   const specilatiyData = await (await (fetch(SpecilatiyApiUrl))).json();
   return specilatiyData;
 });

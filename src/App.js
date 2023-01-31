@@ -10,11 +10,11 @@ import { SpecilatiyThunk } from './redux/specilatiySlice';
 import { userThunk } from './redux/userSlice';
 import Home from './components/Home';
 import Appointment from './components/Appointment';
-import Datepickers from './components/Datepicker';
 import TrainerDetails from './components/TrainerDetails';
 import SearchLocation from './components/SearchLocation';
 import Specilatiy from './components/Specilatiy';
 import Trainer from './components/Trainer';
+import Login from './components/Login';
 
 const App = () => {
   const trainersArray = useSelector((state) => state.trainers);
@@ -41,7 +41,7 @@ const App = () => {
         <Sidebars />
         <Routes>
           <Route path="/" element={<Home trainers={trainersArray} />} />
-          <Route path="/date" element={<Datepickers />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/appointment" element={<Appointment trainers={trainersArray} />} />
           <Route path="/trainerDetails" element={<TrainerDetails />} />
           <Route path="/search" element={<SearchLocation />} />

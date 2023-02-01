@@ -12,35 +12,48 @@ const Sidebars = () => {
 
   return (
     <div
-      className={`d-flex z-1 h-100 position-absolute ${
+      className={`d-flex z-1 h-100 position-absolute sidebar-component  ${
         collapsed ? '' : ' shadow'
       }`}>
       <Sidebar
         className='sidebar'
-        backgroundColor='#96bf02c9'
         defaultCollapsed
         transitionDuration={100}
         collapsedWidth='0px'>
+        <header>
+          <h1 className='sidebar-component-title'>logo</h1>
+        </header>
         <Menu className='pt-5'>
-          <MenuItem component={<Link to='/' />} onClick={handleClick}>
+          <MenuItem
+            className='sidebar-component-item'
+            component={<Link to='/' />}
+            onClick={handleClick}>
             {' '}
             Home
           </MenuItem>
           <MenuItem
+            className='sidebar-component-item'
             component={<Link to='/appointment' />}
             onClick={handleClick}>
             {' '}
             Appoinment
           </MenuItem>
-          <MenuItem component={<Link to='/specilatiy' />} onClick={handleClick}>
+          <MenuItem
+            className='sidebar-component-item'
+            component={<Link to='/specilatiy' />}
+            onClick={handleClick}>
             {' '}
             Specilatiy
           </MenuItem>
-          <MenuItem component={<Link to='/trainer' />} onClick={handleClick}>
+          <MenuItem
+            className='sidebar-component-item'
+            component={<Link to='/trainer' />}
+            onClick={handleClick}>
             {' '}
             Trainer
           </MenuItem>
           <MenuItem
+            className='sidebar-component-item'
             component={
               token ? <Link to='/' onClick={onLogout} /> : <Link to='/login' />
             }

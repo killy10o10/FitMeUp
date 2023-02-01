@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { createContext, useState, useContext } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import fakeAuth from './Auth';

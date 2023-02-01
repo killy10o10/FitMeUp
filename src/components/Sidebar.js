@@ -17,9 +17,11 @@ const Sidebars = () => {
           <MenuItem component={<Link to="/appointment" />} onClick={() => collapseSidebar()}> Appoinment</MenuItem>
           <MenuItem component={<Link to="/specilatiy" />} onClick={() => collapseSidebar()}> Specilatiy</MenuItem>
           <MenuItem component={<Link to="/trainer" />} onClick={() => collapseSidebar()}> Trainer</MenuItem>
-          <MenuItem component={token ? <Link to="/" onClick={onLogout} />
-            : <Link to="/login" />}
-            onClick={() => collapseSidebar()}>
+          <MenuItem
+            component={token ? <Link to="/" onClick={onLogout} />
+              : <Link to="/login" />}
+            onClick={() => collapseSidebar()}
+          >
             {token ? 'Sign Out' : 'Sign In'}
           </MenuItem>
         </Menu>

@@ -41,3 +41,24 @@ input:-ms-input-placeholder {
 input::placeholder {
   font-size: medium;
 }
+
+.sign {
+  background-image: url("../images/signin.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  color: #fff;
+}
+
+.sign-orange {
+  height: 100%;
+  background-color: rgba(36, 94, 133, 0.7882352941);
+}
+
+.sign-form {
+  width: 350px;
+  background-color: rgba(126, 159, 7, 0.7215686275);
+  padding: 15px;
+  border-radius: 15px;
+}

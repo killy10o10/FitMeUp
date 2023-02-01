@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import fakeAuth from './Auth';
 
 const AuthContext = createContext(null);
@@ -7,11 +7,13 @@ const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(null);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogin = async () => {
     const token = await fakeAuth();
     setToken(token);
-    navigate('/');
+    const origin = location.state?.from?.pathname || '/';
+    navigate(origin);
   };
 
   const handleLogout = () => {

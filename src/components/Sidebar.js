@@ -1,10 +1,13 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   Sidebar, Menu, MenuItem, useProSidebar,
 } from 'react-pro-sidebar';
+import { useAuth } from '../auth/Provider';
 
 const Sidebars = () => {
   const { collapseSidebar, collapsed } = useProSidebar();
+  const { token, handleLogout } = useAuth();
 
   return (
     <div className={`d-flex z-1 h-100 position-absolute ${collapsed ? '' : ' shadow'}`}>
@@ -15,7 +18,11 @@ const Sidebars = () => {
           <MenuItem component={<Link to="/appointment" />} onClick={() => collapseSidebar()}> Appoinment</MenuItem>
           <MenuItem component={<Link to="/specilatiy" />} onClick={() => collapseSidebar()}> Specilatiy</MenuItem>
           <MenuItem component={<Link to="/trainer" />} onClick={() => collapseSidebar()}> Trainer</MenuItem>
-
+          <MenuItem component={token ? <Link to="/" onClick={handleLogout} />
+            : <Link to="/login" />}
+          >
+            {token ? 'Sign Out' : 'Sign In'}
+          </MenuItem>
         </Menu>
       </Sidebar>
       <div className="position-relative z-3">

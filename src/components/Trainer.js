@@ -2,30 +2,29 @@
 import React, { useState } from 'react';
 
 const Trainer = ({ trainers }) => {
-
   const [state, setState] = useState({
-    username: "",
-    email_address: "",
-    phone_number: "",
-    password: "",
-    weight: "",
-    height: "",
-    address: "",
-    dob: "",
-    pic: "",
-    role: "trainer",
-    bio:"",
-    price:"",
-    speciality: []
-  })
+    username: '',
+    email_address: '',
+    phone_number: '',
+    password: '',
+    weight: '',
+    height: '',
+    address: '',
+    dob: '',
+    pic: '',
+    role: 'trainer',
+    bio: '',
+    price: '',
+    speciality: [],
+  });
 
   const handleChange = (e) => {
     setState({
       ...state,
-      [e.target.name]:e.target.value
-    })
+      [e.target.name]: e.target.value,
+    });
   };
-  
+
   return (
     <div className="container pt-5">
       <p className="text-center fs-4 p-3"> Trainer Form</p>
@@ -33,63 +32,124 @@ const Trainer = ({ trainers }) => {
 
         <div className="mb-3">
           <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
-          <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"
-          value={state.email_address} onChange={handleChange}  />
+          <input
+            type="email"
+            className="form-control"
+            id="exampleFormControlInput1"
+            placeholder="name@example.com"
+            value={state.email_address}
+            onChange={handleChange}
+          />
         </div>
         <div className="mb-3">
           <label htmlFor="pic" className="form-label">Profile pic</label>
-          <input type="number" className="form-control" id="pic"  value={state.pic}
-          onChange={handleChange} />
+          <input
+            type="number"
+            className="form-control"
+            id="pic"
+            value={state.pic}
+            onChange={handleChange}
+          />
         </div>
         <div className="mb-3">
           <label htmlFor="username" className="form-label">Username</label>
-          <input type="text" className="form-control" id="username"  value={state.username}
-          onChange={handleChange} />
+          <input
+            type="text"
+            className="form-control"
+            id="username"
+            value={state.username}
+            onChange={handleChange}
+          />
         </div>
         <div className="mb-3">
           <label htmlFor="password" className="form-label">Password</label>
-          <input type="number" className="form-control" id="password"  value={state.password}
-          onChange={handleChange} />
+          <input
+            type="number"
+            className="form-control"
+            id="password"
+            value={state.password}
+            onChange={handleChange}
+          />
         </div>
         <div className="mb-3">
           <label htmlFor="height" className="form-label">Height</label>
-          <input type="number" className="form-control" id="height"  value={state.height}
-          onChange={handleChange} />
+          <input
+            type="number"
+            className="form-control"
+            id="height"
+            value={state.height}
+            onChange={handleChange}
+          />
         </div>
         <div className="mb-3">
           <label htmlFor="weight" className="form-label">Weight</label>
-          <input type="number" className="form-control" id="weight"  value={state.weight}
-          onChange={handleChange} />
+          <input
+            type="number"
+            className="form-control"
+            id="weight"
+            value={state.weight}
+            onChange={handleChange}
+          />
         </div>
         <div className="mb-3">
           <label htmlFor="phoneno" className="form-label">Phone Number</label>
-          <input type="number" className="form-control" id="phoneno"  value={state.phone_number}
-          onChange={handleChange} />
+          <input
+            type="number"
+            className="form-control"
+            id="phoneno"
+            value={state.phone_number}
+            onChange={handleChange}
+          />
         </div>
         <div className="mb-3">
           <label htmlFor="address" className="form-label">Address</label>
-          <input type="text" className="form-control" id="address"  value={state.address}
-          onChange={handleChange} />
+          <input
+            type="text"
+            className="form-control"
+            id="address"
+            value={state.address}
+            onChange={handleChange}
+          />
         </div>
         <div className="mb-3">
           <label htmlFor="dob" className="form-label">DOB</label>
-          <input type="date" className="form-control" id="dob"  value={state.dob}
-          onChange={handleChange} />
+          <input
+            type="date"
+            className="form-control"
+            id="dob"
+            value={state.dob}
+            onChange={handleChange}
+          />
         </div>
         <div className="mb-3">
           <label htmlFor="price" className="form-label">Price</label>
-          <input type="number" className="form-control" id="price"  value={state.price}
-          onChange={handleChange} />
+          <input
+            type="number"
+            className="form-control"
+            id="price"
+            value={state.price}
+            onChange={handleChange}
+          />
         </div>
         <div className="mb-3">
           <label htmlFor="bio" className="form-label">Bio</label>
-          <input type="text" className="form-control" id="bio" value={state.bio}
-          onChange={handleChange} />
+          <input
+            type="text"
+            className="form-control"
+            id="bio"
+            value={state.bio}
+            onChange={handleChange}
+          />
         </div>
         <div className="mb-3">
           <label htmlFor="dob" className="form-label">DOB</label>
-          <input type="date" className="form-control" id="dob"  value={state.dob}
-          onChange={handleChange} />
+          <input
+            type="date"
+            className="form-control"
+            id="dob"
+            value={state.dob}
+            onChange={handleChange}
+          />
         </div>
         <button type="submit" className="btn btn-success">Submit</button>
       </form>

@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import {
   Sidebar, Menu, MenuItem, useProSidebar,
 } from 'react-pro-sidebar';
-import { useAuth } from '../auth/Provider';
 import { useSelector } from 'react-redux';
-
+import { useAuth } from '../auth/Provider';
 
 const Sidebars = () => {
   const { collapseSidebar, collapsed } = useProSidebar();
@@ -17,11 +16,13 @@ const Sidebars = () => {
       <Sidebar className="sidebar" backgroundColor="#96bf02c9" defaultCollapsed transitionDuration={100} collapsedWidth="0px">
         <Menu className="pt-5">
           <MenuItem component={<Link to="/" />} onClick={() => collapseSidebar()}> Home</MenuItem>
-          {userArray.length===0  ? '' :(<>
-            <MenuItem component={<Link to="/appointment" />} onClick={() => collapseSidebar()}> Appoinment</MenuItem>
-            <MenuItem component={<Link to="/specilatiy" />} onClick={() => collapseSidebar()}> Specilatiy</MenuItem>
-            <MenuItem component={<Link to="/trainer" />} onClick={() => collapseSidebar()}> Trainer</MenuItem>
-          </>) }
+          {userArray.length === 0 ? '' : (
+            <>
+              <MenuItem component={<Link to="/appointment" />} onClick={() => collapseSidebar()}> Appoinment</MenuItem>
+              <MenuItem component={<Link to="/specilatiy" />} onClick={() => collapseSidebar()}> Specilatiy</MenuItem>
+              <MenuItem component={<Link to="/trainer" />} onClick={() => collapseSidebar()}> Trainer</MenuItem>
+            </>
+          ) }
           <MenuItem
             component={token ? <Link to="/" onClick={onLogout} />
               : <Link to="/login" />}

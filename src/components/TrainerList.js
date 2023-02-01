@@ -22,23 +22,25 @@ const TrainerList = (props) => {
     return (
       <div
         key={full_name}
-        className='trainer-card gap-5 d-flex flex-column align-items-center justify-content-center'>
-        <NavLink to='/trainerDetails' state={item}>
+        className="trainer-card gap-5 d-flex flex-column align-items-center justify-content-center"
+      >
+        <NavLink to="/trainerDetails" state={item}>
           <div
-            className='trainer-image-container d-flex align-items-center justify-content-center'
+            className="trainer-image-container d-flex align-items-center justify-content-center"
             style={{
               backgroundColor: `${trainerCardBackgroundColors[`${index}`]}`,
-            }}>
+            }}
+          >
             <img src={profile_pic} alt={full_name} />
           </div>
         </NavLink>
-        <div className='trainer-info'>
-          <div className='trainer-name d-flex flex-column align-items-center p-2'>
-            <h2 className='text-center'>{full_name}</h2>
-            <hr className='horizontal-border' />
+        <div className="trainer-info">
+          <div className="trainer-name d-flex flex-column align-items-center p-2">
+            <h2 className="text-center">{full_name}</h2>
+            <hr className="horizontal-border" />
           </div>
-          <div className='trainer-description'>
-            <p className='text-center'>
+          <div className="trainer-description">
+            <p className="text-center">
               {limitedBio}
               ...
             </p>
@@ -49,7 +51,7 @@ const TrainerList = (props) => {
   });
 
   return (
-    <Carousel className='py-5' breakPoints={breakPoints}>
+    <Carousel className="py-5" breakPoints={breakPoints}>
       {trainerCard}
     </Carousel>
   );

@@ -255,21 +255,6 @@ select {
   border-style: dotted none none none;
 }
 
-.trainer-handles * {
-  border: rgb(221, 220, 220) solid 1px;
-  color: grey;
-  border-radius: 50%;
-  font-size: 20px;
-  text-align: center;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
-
-.trainer-details .trainer-img {
-  flex: 0.8;
-}
-
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 10px;

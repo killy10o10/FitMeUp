@@ -1,0 +1,21 @@
+.trainer-details-section .trainer-img {
+  flex: 0.8;
+}
+
+.trainer-details table {
+  width: 50vmin;
+}
+
+@media only screen and (max-width: 600px) {
+  .trainer-details-section .trainer-img {
+    flex: 0.5;
+  }
+
+  .trainer-details-section {
+    flex-direction: column;
+  }
+
+  .trainer-details table {
+    width: 90vw;
+  }
+}

@@ -1,11 +1,4 @@
 import React from 'react';
-import {
-  FaLinkedinIn,
-  BsTwitter,
-  TfiGoogle,
-  FaFacebookF,
-  FaPinterestP,
-} from 'react-icons/all';
 
 const Socials = () => (
   <footer className="socials">
@@ -14,31 +7,31 @@ const Socials = () => (
         href="https://github.com/killy10o10/FitMeUp.git"
         className="socials-link"
       >
-        <BsTwitter className="socials-icon" />
+        <i className="bi bi-twitter socials-icon" />
       </a>
       <a
         href="https://github.com/killy10o10/FitMeUp.git"
         className="socials-link"
       >
-        <FaFacebookF className="socials-icon" />
+        <i className="bi bi-behance socials-icon" />
       </a>
       <a
         href="https://github.com/killy10o10/FitMeUp.git"
         className="socials-link"
       >
-        <TfiGoogle className="socials-icon" />
+        <i className="bi bi-github socials-icon" />
       </a>
       <a
         href="https://github.com/killy10o10/FitMeUp.git"
         className="socials-link"
       >
-        <FaLinkedinIn className="socials-icon" />
+        <i className="bi bi-vimeo socials-icon" />
       </a>
       <a
         href="https://github.com/killy10o10/FitMeUp.git"
         className="socials-link"
       >
-        <FaPinterestP className="socials-icon" />
+        <i className="bi bi-pinterest socials-icon" />
       </a>
     </div>
 

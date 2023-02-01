@@ -11,7 +11,7 @@ const getSequence = (startIndex, totalTrainers) => {
 const getBackgroundColor = (totalTrainers) => {
   const colorIndices = {
     '#add8e6': getSequence(0, totalTrainers),
-    '#90ee90': getSequence(1, totalTrainers),
+    '#90ee90': getSequence(1, totalTrainers), 
     '#d3d3d3': getSequence(2, totalTrainers),
     '#ffb6c1': getSequence(3, totalTrainers),
   };

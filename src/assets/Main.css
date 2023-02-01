@@ -112,4 +112,11 @@ input::placeholder {
 
 body {
   background-color: #f5fdf8;
+}
+
+.kXteup:hover:enabled,
+.kXteup:focus:enabled {
+  color: #fff !important;
+  background-color: #96bf02 !important;
+  box-shadow: 0 0 2px 0 #333;
 }/*# sourceMappingURL=Main.css.map */

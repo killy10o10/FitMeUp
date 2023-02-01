@@ -108,4 +108,8 @@ input::placeholder {
 .socials-copyright {
   font-size: 15px;
   text-transform: uppercase;
+}
+
+body {
+  background-color: #f5fdf8;
 }/*# sourceMappingURL=Main.css.map */

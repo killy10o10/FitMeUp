@@ -1,9 +1,14 @@
 import { Link } from 'react-router-dom';
 import { Sidebar, Menu, MenuItem, useProSidebar } from 'react-pro-sidebar';
+import { useAuth } from '../auth/Provider';
+import Socials from './Socials';
 
 const Sidebars = () => {
   const { collapseSidebar, collapsed } = useProSidebar();
-
+  const { token, onLogout } = useAuth();
+  const handleClick = () => {
+    collapseSidebar();
+  };
   return (
     <div
       className={`d-flex z-1 h-100 position-absolute ${
@@ -23,44 +28,56 @@ const Sidebars = () => {
           <MenuItem
             className='sidebar-component-item'
             component={<Link to='/' />}
-            onClick={() => collapseSidebar()}>
+            onClick={handleClick}>
             {' '}
             Home
           </MenuItem>
           <MenuItem
             className='sidebar-component-item'
             component={<Link to='/date' />}
-            onClick={() => collapseSidebar()}>
+            onClick={handleClick}>
             {' '}
             Book
           </MenuItem>
           <MenuItem
             className='sidebar-component-item'
             component={<Link to='/appointment' />}
-            onClick={() => collapseSidebar()}>
+            onClick={handleClick}>
             {' '}
             Appoinment
           </MenuItem>
           <MenuItem
             className='sidebar-component-item'
             component={<Link to='/specilatiy' />}
-            onClick={() => collapseSidebar()}>
+            onClick={handleClick}>
             {' '}
             Specilatiy
           </MenuItem>
           <MenuItem
             className='sidebar-component-item'
             component={<Link to='/trainer' />}
-            onClick={() => collapseSidebar()}>
+            onClick={handleClick}>
             {' '}
             Trainer
           </MenuItem>
+
+          <MenuItem
+            className='sidebar-component-item'
+            component={
+              token ? <Link to='/' onClick={onLogout} /> : <Link to='/login' />
+            }
+            onClick={handleClick}>
+            {token ? 'Sign Out' : 'Sign In'}
+          </MenuItem>
         </Menu>
+        <footer>
+          <Socials />
+        </footer>
       </Sidebar>
       <div className='position-relative z-3'>
         <button
           type='button'
-          onClick={() => collapseSidebar()}
+          onClick={handleClick}
           className={`btn hamburger fs-3 ${
             collapsed ? '' : ' position-absolute sidebar-btn'
           }`}>

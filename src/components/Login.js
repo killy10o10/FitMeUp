@@ -4,7 +4,7 @@ import { useAuth } from '../auth/Provider';
 const Login = () => {
   const [username, setusername] = useState('');
   const [password, setpassword] = useState('');
-  const {  onLogin } = useAuth();
+  const { onLogin } = useAuth();
 
   const handlelogin = (e) => {
     e.preventDefault();

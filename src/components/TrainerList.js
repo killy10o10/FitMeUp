@@ -13,25 +13,27 @@ const breakPoints = [
 
 const TrainerList = (props) => {
   const { trainers } = props;
-  const trainerCard = trainers.map((item) => {
-    const {
-      full_name, profile_pic, bio,
-    } = item;
+  const trainerCard = trainers.map((item, index) => {
+    const { full_name, profile_pic, bio } = item;
     const limitedBio = bio.split(' ').slice(0, 15).join(' ');
     return (
-      <div key={full_name} className="trainer-card gap-5 d-flex flex-column align-items-center justify-content-center">
-        <NavLink to="/trainerDetails" state={item}>
-          <div className="trainer-image-container d-flex align-items-center justify-content-center">
+      <div
+        key={full_name}
+        className='trainer-card gap-5 d-flex flex-column align-items-center justify-content-center'>
+        <NavLink to='/trainerDetails' state={item}>
+          <div
+            className='trainer-image-container d-flex align-items-center justify-content-center'
+            style={{ backgroundColor: '#000000' }}>
             <img src={profile_pic} alt={full_name} />
           </div>
         </NavLink>
-        <div className="trainer-info">
-          <div className="trainer-name d-flex flex-column align-items-center p-2">
-            <h2 className="text-center">{full_name}</h2>
-            <hr className="horizontal-border" />
+        <div className='trainer-info'>
+          <div className='trainer-name d-flex flex-column align-items-center p-2'>
+            <h2 className='text-center'>{full_name}</h2>
+            <hr className='horizontal-border' />
           </div>
-          <div className="trainer-description">
-            <p className="text-center">
+          <div className='trainer-description'>
+            <p className='text-center'>
               {limitedBio}
               ...
             </p>
@@ -42,7 +44,7 @@ const TrainerList = (props) => {
   });
 
   return (
-    <Carousel className="py-5" breakPoints={breakPoints}>
+    <Carousel className='py-5' breakPoints={breakPoints}>
       {trainerCard}
     </Carousel>
   );

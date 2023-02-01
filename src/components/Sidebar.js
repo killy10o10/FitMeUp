@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import {
   Sidebar, Menu, MenuItem, useProSidebar,
 } from 'react-pro-sidebar';
+import { useSelector } from 'react-redux';
 import { useAuth } from '../auth/Provider';
 import Socials from './Socials';
 
@@ -11,6 +12,7 @@ const Sidebars = () => {
   const handleClick = () => {
     collapseSidebar();
   };
+  const userArray = useSelector((state) => state.users);
   return (
     <div
       className={`d-flex z-1 h-100 position-absolute ${
@@ -69,7 +71,6 @@ const Sidebars = () => {
             {' '}
             Trainer
           </MenuItem>
-
           <MenuItem
             className="sidebar-component-item"
             component={

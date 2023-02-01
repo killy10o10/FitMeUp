@@ -4,7 +4,7 @@ import { useAuth } from '../auth/Provider';
 const Login = () => {
   const [username, setusername] = useState('');
   const [password, setpassword] = useState('');
-  const { token, onLogin } = useAuth();
+  const {  onLogin } = useAuth();
 
   const handlelogin = (e) => {
     e.preventDefault();
@@ -23,7 +23,7 @@ const Login = () => {
     // });
 
     // let result = await res.json();
-    onLogin(); 
+    onLogin();
   };
 
   return (

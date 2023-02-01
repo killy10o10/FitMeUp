@@ -3,6 +3,7 @@
 /* eslint-disable react/prop-types */
 import { NavLink } from 'react-router-dom';
 import Carousel from 'react-elastic-carousel';
+import getBackgroundColor from '../scripts/bgColor';
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -13,6 +14,8 @@ const breakPoints = [
 
 const TrainerList = (props) => {
   const { trainers } = props;
+  const trainerCardBackgroundColors = getBackgroundColor(trainers.length);
+
   const trainerCard = trainers.map((item, index) => {
     const { full_name, profile_pic, bio } = item;
     const limitedBio = bio.split(' ').slice(0, 15).join(' ');
@@ -23,7 +26,9 @@ const TrainerList = (props) => {
         <NavLink to='/trainerDetails' state={item}>
           <div
             className='trainer-image-container d-flex align-items-center justify-content-center'
-            style={{ backgroundColor: '#000000' }}>
+            style={{
+              backgroundColor: `${trainerCardBackgroundColors[`${index}`]}`,
+            }}>
             <img src={profile_pic} alt={full_name} />
           </div>
         </NavLink>

@@ -1,4 +1,14 @@
-const getBackgroundColor = (index, totalTrainers) => {
+const getSequence = (startIndex, totalTrainers) => {
+  let start = startIndex;
+  const sequenceArray = [];
+  while (start < totalTrainers) {
+    sequenceArray.push(start);
+    start += 4;
+  }
+  return sequenceArray;
+};
+
+const getBackgroundColor = (totalTrainers) => {
   const colorIndices = {
     '#add8e6': getSequence(0, totalTrainers),
     '#90ee90': getSequence(1, totalTrainers),
@@ -6,20 +16,17 @@ const getBackgroundColor = (index, totalTrainers) => {
     '#ffb6c1': getSequence(3, totalTrainers),
   };
 
-  for (let [key, value] of Object.entries(colorIndices)) {
-    if (value.includes(index)) {
-      return key;
+  const result = {};
+
+  for (let i = 0; i < totalTrainers; i++) {
+    for (let [key, value] of Object.entries(colorIndices)) {
+      if (value.includes(i)) {
+        result[`${i}`] = key;
+      }
     }
   }
-};
 
-const getSequence = (startIndex, totalTrainers) => {
-  const sequenceArray = [];
-  while (startIndex < totalTrainers) {
-    sequenceArray.push(startIndex);
-    startIndex += 4;
-  }
-  return sequenceArray;
+  return result;
 };
 
 export default getBackgroundColor;

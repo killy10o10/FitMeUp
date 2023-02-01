@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import './assets/Main.css';
-import {  Routes, Route} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Sidebars from './components/Sidebar';
 import { FitMeUpThunk } from './redux/fitMeUpSlice';
@@ -16,6 +16,7 @@ import Specilatiy from './components/Specilatiy';
 import Trainer from './components/Trainer';
 import Login from './components/Login';
 import { AuthProvider } from './auth/Provider';
+import ProtectedRoute from './auth/ProtectedRoute';
 
 const App = () => {
   const trainersArray = useSelector((state) => state.trainers);
@@ -43,11 +44,19 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home trainers={trainersArray} />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/appointment" element={<Appointment trainers={trainersArray} />} />
-          <Route path="/trainerDetails" element={<TrainerDetails />} />
+          <Route path="/appointment" element={<ProtectedRoute>
+            <Appointment trainers={trainersArray} />
+          </ProtectedRoute>} />
+          <Route path="/trainerDetails" element={<ProtectedRoute>
+            <TrainerDetails />
+          </ProtectedRoute>} />
           <Route path="/search" element={<SearchLocation />} />
-          <Route path="/specilatiy" element={<Specilatiy specilatiy={specilatiyArray} />} />
-          <Route path="/trainer" element={<Trainer users={userArray} trainers={trainersArray} />} />
+          <Route path="/specilatiy" element={<ProtectedRoute>
+            <Specilatiy specilatiy={specilatiyArray} />
+          </ProtectedRoute>} />
+          <Route path="/trainer" element={<ProtectedRoute>
+            <Trainer users={userArray} trainers={trainersArray} />
+          </ProtectedRoute>} />
         </Routes>
       </AuthProvider>
     </div>

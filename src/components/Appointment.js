@@ -18,7 +18,7 @@ function Appointment({ trainers }) {
             <h1 className="text-center">Book A Professional Trainer</h1>
           </div>
           <div className="booking-intro p-3">
-            <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sint quibusdam quas deserunt ea corporis est quaerat magni hic dignissimos, labore tempore. Recusandae sapiente facere aspernatur assumenda atque vitae nisi!</p>
+            <p className="text-center">The moment you step into the Fit Me Up Community, you will be inspired to push a little harder, sweat a little longer, and believe in yourself a little more. We are deeply rooted and growing stronger every day. Our brand of fitness is one that strives for longevity. We prepare you today so that you can do the things that you love tomorrow.</p>
           </div>
           <div className="booking-buttons d-flex gap-3">
             <select

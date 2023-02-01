@@ -4,6 +4,7 @@ import {
 } from 'react-pro-sidebar';
 import { useAuth } from '../auth/Provider';
 import Socials from './Socials';
+import logo from '../images/fitmeup-logo.svg';
 
 const Sidebars = () => {
   const { collapseSidebar, collapsed } = useProSidebar();
@@ -14,7 +15,7 @@ const Sidebars = () => {
 
   return (
     <div
-      className={`d-flex z-1 h-100 position-absolute ${
+      className={`d-flex z-1 position-absolute ${
         collapsed ? '' : ' shadow'
       }`}
     >
@@ -26,8 +27,8 @@ const Sidebars = () => {
         collapsedWidth="0px"
       >
         <Menu className="pt-5">
-          <header>
-            <h1 className="sidebar-component-title">logo</h1>
+          <header className="logo-header d-flex align-items-center justify-content-center">
+            <img className="img-fluid sidebar-component-title" src={logo} alt="Fit Me UP" />
           </header>
 
           <MenuItem

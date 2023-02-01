@@ -6,9 +6,8 @@
   border: thin solid #e2e2e2;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
 
-  header {
-    margin-top: 30px;
-    margin-bottom: 60px;
+  .logo-header img {
+    width: 150px;
   }
 
   &-title {
@@ -28,5 +27,11 @@
       background: var(--pale-green) !important;
       color: white;
     }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .sidebar-component {
+    height: 100vh;
   }
 }

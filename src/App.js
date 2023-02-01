@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import './assets/Main.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {  Routes, Route} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Sidebars from './components/Sidebar';
 import { FitMeUpThunk } from './redux/fitMeUpSlice';
@@ -15,6 +15,7 @@ import SearchLocation from './components/SearchLocation';
 import Specilatiy from './components/Specilatiy';
 import Trainer from './components/Trainer';
 import Login from './components/Login';
+import { AuthProvider } from './auth/Provider';
 
 const App = () => {
   const trainersArray = useSelector((state) => state.trainers);
@@ -37,7 +38,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <AuthProvider>
         <Sidebars />
         <Routes>
           <Route path="/" element={<Home trainers={trainersArray} />} />
@@ -48,7 +49,7 @@ const App = () => {
           <Route path="/specilatiy" element={<Specilatiy specilatiy={specilatiyArray} />} />
           <Route path="/trainer" element={<Trainer users={userArray} trainers={trainersArray} />} />
         </Routes>
-      </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 };

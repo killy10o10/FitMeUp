@@ -35,6 +35,18 @@ export const loginUser = async (token) => (await (await fetch('http://127.0.0.1:
   },
 })).json());
 
+export const trainerForm = async (data, token) => (
+  await (await fetch('http://127.0.0.1:3001/api/v1/users', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      Authorization: token,
+    },
+    body: JSON.stringify(data),
+  })).json()
+);
+
 // export const logoutUser = () => {
 //   const dispatch = useDispatch();
 //   dispatch(settoken(null));

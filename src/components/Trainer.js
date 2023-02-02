@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { trainerForm } from '../auth/Auth';
 
 const Trainer = ({ trainers }) => {
   const [state, setState] = useState({
@@ -24,6 +26,8 @@ const Trainer = ({ trainers }) => {
       [e.target.name]: e.target.value,
     }));
   };
+
+  const token = useSelector((state) => state.currentuser.token);
 
   return (
     <div className="container pt-5">
@@ -103,6 +107,7 @@ const Trainer = ({ trainers }) => {
         <div className="mb-3">
           <label htmlFor="phoneno" className="form-label">Phone Number</label>
           <input
+            name="phone_number"
             type="number"
             className="form-control"
             id="phoneno"
@@ -160,7 +165,7 @@ const Trainer = ({ trainers }) => {
             onChange={handleChange}
           />
         </div>
-        <button type="submit" className="btn btn-success">Submit</button>
+        <button type="submit" className="btn btn-success" onClick={trainerForm(state, token)}>Submit</button>
       </form>
       <p className="text-center p-3 fs-3"> Trainer List</p>
       <div className="border p-2 mt-3">

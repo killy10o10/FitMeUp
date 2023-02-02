@@ -1,5 +1,6 @@
 /* eslint no-param-reassign: "error" */
 import { createSlice } from '@reduxjs/toolkit';
+import { gettoken, loginUser } from '../auth/Auth';
 
 export const UserSlice = createSlice({
   name: 'user',
@@ -9,7 +10,7 @@ export const UserSlice = createSlice({
   },
   reducers: {
     getdata: (state, action) => { state.data = action.payload; },
-    setdata: (state,action) => {state.data=+action.payload},
+    settoken: (state, action) => { state.token = action.payload; },
     // setStatus: (state, action) => { state.status = action.payload; },
     userChange: (state, action) => {
       state.data = state.data.map((user) => {
@@ -17,11 +18,13 @@ export const UserSlice = createSlice({
         return { ...user, user: !user.user };
       });
     },
-    traineradd: (state, action) => { state.data = + action.payload },
+    traineradd: (state, action) => { state.data = action.payload; },
   },
 });
 
-export const { getdata,  userChange, traineradd, setdata } = UserSlice.actions;
+export const {
+  getdata, userChange, traineradd, settoken,
+} = UserSlice.actions;
 
 export default UserSlice.reducer;
 
@@ -30,19 +33,14 @@ export default UserSlice.reducer;
 export function fetchdata(item) {
   return async function fetchdataThunk(dispatch) {
     try {
-      const { token } = gettoken(item)
-
+      const { token } =await gettoken(item);
+      dispatch(settoken(token));
       if (token !== 'unauthorized') {
-        const data = loginUser();
-        const obj = {
-          token,
-          data
-        }
-      dispatch(setdata(obj));
+        const data = await loginUser(token);
+        dispatch(getdata(data));
       }
-   
     } catch (error) {
-      console.log("Unauthorized");
+      console.log('Unauthorized');
     }
   };
 }

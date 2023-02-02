@@ -80,6 +80,8 @@ const Trainer = ({ trainers }) => {
           <label htmlFor="height" className="form-label">Height</label>
           <input
             type="number"
+            name="height"
+            placeholder="Height in meters"
             className="form-control"
             id="height"
             value={state.height}

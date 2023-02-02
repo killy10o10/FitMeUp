@@ -6,18 +6,17 @@ import { trainerForm } from '../auth/Auth';
 const Trainer = ({ trainers }) => {
   const [state, setState] = useState({
     username: '',
+    full_name: '',
     email_address: '',
     phone_number: '',
     password: '',
-    weight: '',
-    height: '',
+    weight_in_kg: '',
+    height_in_meter: '',
     address: '',
-    dob: '',
-    pic: '',
-    role: 'trainer',
+    date_of_birth: '',
+    profile_pic: '',
     bio: '',
     price: '',
-    speciality: [],
   });
 
   const handleChange = (e) => {
@@ -28,6 +27,12 @@ const Trainer = ({ trainers }) => {
   };
 
   const token = useSelector((state) => state.currentuser.token);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    trainerForm(state, token);
+    console.log(state);
+  };
 
   return (
     <div className="container pt-5">
@@ -50,11 +55,11 @@ const Trainer = ({ trainers }) => {
           <label htmlFor="pic" className="form-label">Profile pic</label>
           <input
             type="text"
-            name="pic"
+            name="profile_pic"
             placeholder="enter image url"
             className="form-control"
             id="pic"
-            value={state.pic}
+            value={state.profile_pic}
             onChange={handleChange}
           />
         </div>
@@ -66,6 +71,17 @@ const Trainer = ({ trainers }) => {
             className="form-control"
             id="username"
             value={state.username}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="username" className="form-label">Full Name</label>
+          <input
+            type="text"
+            name="full_name"
+            className="form-control"
+            id="username"
+            value={state.full_name}
             onChange={handleChange}
           />
         </div>
@@ -84,11 +100,11 @@ const Trainer = ({ trainers }) => {
           <label htmlFor="height" className="form-label">Height</label>
           <input
             type="number"
-            name="height"
+            name="height_in_meter"
             placeholder="Height in meters"
             className="form-control"
             id="height"
-            value={state.height}
+            value={state.height_in_meter}
             onChange={handleChange}
           />
         </div>
@@ -96,11 +112,11 @@ const Trainer = ({ trainers }) => {
           <label htmlFor="weight" className="form-label">Weight</label>
           <input
             type="number"
-            name="weight"
+            name="weight_in_kg"
             className="form-control"
             placeholder="weight in kg"
             id="weight"
-            value={state.weight}
+            value={state.weight_in_kg}
             onChange={handleChange}
           />
         </div>
@@ -119,6 +135,7 @@ const Trainer = ({ trainers }) => {
           <label htmlFor="address" className="form-label">Address</label>
           <input
             type="text"
+            name="address"
             className="form-control"
             id="address"
             value={state.address}
@@ -129,9 +146,10 @@ const Trainer = ({ trainers }) => {
           <label htmlFor="dob" className="form-label">DOB</label>
           <input
             type="date"
+            name="date_of_birth"
             className="form-control"
             id="dob"
-            value={state.dob}
+            value={state.date_of_birth}
             onChange={handleChange}
           />
         </div>
@@ -139,6 +157,7 @@ const Trainer = ({ trainers }) => {
           <label htmlFor="price" className="form-label">Price</label>
           <input
             type="number"
+            name="price"
             className="form-control"
             id="price"
             value={state.price}
@@ -149,23 +168,14 @@ const Trainer = ({ trainers }) => {
           <label htmlFor="bio" className="form-label">Bio</label>
           <input
             type="text"
+            name="bio"
             className="form-control"
             id="bio"
             value={state.bio}
             onChange={handleChange}
           />
         </div>
-        <div className="mb-3">
-          <label htmlFor="dob" className="form-label">DOB</label>
-          <input
-            type="date"
-            className="form-control"
-            id="dob"
-            value={state.dob}
-            onChange={handleChange}
-          />
-        </div>
-        <button type="submit" className="btn btn-success" onClick={trainerForm(state, token)}>Submit</button>
+        <button type="submit" className="btn btn-success" onClick={handleSubmit}>Submit</button>
       </form>
       <p className="text-center p-3 fs-3"> Trainer List</p>
       <div className="border p-2 mt-3">

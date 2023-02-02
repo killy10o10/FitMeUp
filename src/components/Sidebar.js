@@ -4,12 +4,12 @@ import {
   Sidebar, Menu, MenuItem, useProSidebar,
 } from 'react-pro-sidebar';
 import { useSelector } from 'react-redux';
-import { useAuth } from '../auth/Provider';
+// import { useSelector } from 'react-redux';
 
 const Sidebars = () => {
   const { collapseSidebar, collapsed } = useProSidebar();
-  const { token, onLogout } = useAuth();
   const userArray = useSelector((state) => state.users);
+  const token = useSelector((state) => state.currentuser.token);
 
   return (
     <div className={`d-flex z-1 h-100 position-absolute ${collapsed ? '' : ' shadow'}`}>
@@ -24,7 +24,7 @@ const Sidebars = () => {
             </>
           ) }
           <MenuItem
-            component={token ? <Link to="/" onClick={onLogout} />
+            component={token ? <Link to="/" />
               : <Link to="/login" />}
             onClick={() => collapseSidebar()}
           >

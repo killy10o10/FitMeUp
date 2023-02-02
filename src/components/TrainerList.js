@@ -18,7 +18,7 @@ const TrainerList = (props) => {
 
   const trainerCard = trainers.map((item, index) => {
     const { full_name, profile_pic, bio } = item;
-    const limitedBio = bio.split(' ').slice(0, 15).join(' ');
+    const limitedBio = bio ?  bio.split(' ').slice(0, 15).join(' '):'';
     return (
       <div
         key={full_name}

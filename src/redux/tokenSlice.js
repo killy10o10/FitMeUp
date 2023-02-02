@@ -29,8 +29,6 @@ export const {
 
 export default UserSlice.reducer;
 
-// Thunks
-
 export function fetchdata(item) {
   return async function fetchdataThunk(dispatch) {
     try {

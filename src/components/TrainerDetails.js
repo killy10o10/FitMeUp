@@ -42,6 +42,9 @@ const TrainerDetails = () => {
             </tr>
           </tbody>
         </table>
+        <div className="bio">
+          <p>{state.bio}</p>
+        </div>
         <div className="booking mb-3 shadow-lg d-flex justify-content-center align-items-center p-1  mt-4">
           <i className="bi bi-bookmark-check mx-1 fs-4 text-white" />
           <button className="book-btn book" type="button" onClick={displayHandler}>Book Trainer</button>

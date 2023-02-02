@@ -91,7 +91,7 @@ input::placeholder {
   color: white;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 600px) {
   .sidebar-component {
     height: 100vh;
   }
@@ -139,7 +139,8 @@ body {
   flex: 0.8;
 }
 
-.trainer-details table {
+.trainer-details table,
+.bio {
   width: 50vmin;
 }
 
@@ -156,7 +157,8 @@ body {
     flex-direction: column;
   }
 
-  .trainer-details table {
+  .trainer-details table,
+  .bio {
     width: 90vw;
   }
 }

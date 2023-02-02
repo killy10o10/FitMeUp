@@ -2,7 +2,8 @@
   flex: 0.8;
 }
 
-.trainer-details table {
+.trainer-details table,
+.bio {
   width: 50vmin;
 }
 
@@ -19,7 +20,8 @@
     flex-direction: column;
   }
 
-  .trainer-details table {
+  .trainer-details table,
+  .bio {
     width: 90vw;
   }
 }

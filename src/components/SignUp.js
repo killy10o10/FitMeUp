@@ -57,7 +57,7 @@ const SignUp = () => {
             onClick={handlelogin}
             className="btn btn-primary align-self-center"
           >
-            Sign In
+            Sign Up
           </button>
         </form>
         <div className="mt-1">

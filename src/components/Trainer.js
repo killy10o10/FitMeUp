@@ -34,6 +34,7 @@ const Trainer = ({ trainers }) => {
           <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
           <input
             type="email"
+            name="email_address"
             className="form-control"
             id="exampleFormControlInput1"
             placeholder="name@example.com"

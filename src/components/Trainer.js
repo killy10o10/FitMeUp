@@ -68,7 +68,8 @@ const Trainer = ({ trainers }) => {
         <div className="mb-3">
           <label htmlFor="password" className="form-label">Password</label>
           <input
-            type="number"
+            type="text"
+            name="password"
             className="form-control"
             id="password"
             value={state.password}

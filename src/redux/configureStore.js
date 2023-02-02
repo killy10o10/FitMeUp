@@ -2,13 +2,13 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import fitMeUpSlice from './fitMeUpSlice';
 import SpecilatiySlice from './specilatiySlice';
 import userSlice from './userSlice';
-import UserSlice from './tokenSlice';
+import UserSliceReducer from './tokenSlice';
 
 const reducer = combineReducers({
   trainers: fitMeUpSlice,
   specilatiys: SpecilatiySlice,
   users: userSlice,
-  currentuser: UserSlice,
+  currentuser: UserSliceReducer,
 });
 
 const store = configureStore({

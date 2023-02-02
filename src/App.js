@@ -20,7 +20,6 @@ import SignUp from './components/SignUp';
 const App = () => {
   const trainersArray = useSelector((state) => state.trainers);
   const specilatiyArray = useSelector((state) => state.specilatiys);
-  const user = useSelector((state) => state.currentuser.user);
 
   const dispatch = useDispatch();
 

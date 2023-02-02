@@ -8,7 +8,7 @@ import logo from '../images/fitmeup-logo.svg';
 
 const Sidebars = () => {
   const { collapseSidebar, collapsed } = useProSidebar();
-  const token = useSelector((state) => state.currentuser.token);
+  const user = useSelector((state) => state.currentuser);
 
   const handleClick = () => {
     collapseSidebar();
@@ -48,6 +48,7 @@ const Sidebars = () => {
             {' '}
             Appoinment
           </MenuItem>
+          {user.token && user.role=== 'admin' ? <>
           <MenuItem
             className="sidebar-component-item"
             component={<Link to="/specilatiy" />}
@@ -65,13 +66,14 @@ const Sidebars = () => {
             Trainer
           </MenuItem>
           <MenuItem
-            component={token ? <Link to="/" />
+            component={user.token ? <Link to="/" />
               : <Link to="/login" />}
             className="sidebar-component-item"
             onClick={handleClick}
           >
-            {token ? 'Sign Out' : 'Sign In'}
+            {user.token ? 'Sign Out' : 'Sign In'}
           </MenuItem>
+          </>:null}
         </Menu>
         <footer>
           <Socials />

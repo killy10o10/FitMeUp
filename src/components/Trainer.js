@@ -92,7 +92,9 @@ const Trainer = ({ trainers }) => {
           <label htmlFor="weight" className="form-label">Weight</label>
           <input
             type="number"
+            name="weight"
             className="form-control"
+            placeholder="weight in kg"
             id="weight"
             value={state.weight}
             onChange={handleChange}

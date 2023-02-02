@@ -3,8 +3,18 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../auth/Provider';
 
 const Login = () => {
-  const [username, setusername] = useState('');
-  const [password, setpassword] = useState('');
+  const [state, setState] = useState({
+    username: '',
+    password: '',
+  });
+
+  const handleChange = (e) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   const [message, setMessage] = useState(true);
   const { onLogin } = useAuth();
 
@@ -25,7 +35,7 @@ const Login = () => {
     // });
 
     // let result = await res.json();
-    if (username.length !== 0 && password.length !== 0) {
+    if (state.username.length !== 0 && state.password.length !== 0) {
       onLogin();
     } else {
       onsubmit = false;
@@ -42,11 +52,11 @@ const Login = () => {
             <label htmlFor="username" className="form-label">Username</label>
             <input
               type="text"
-              value={username}
+              value={state.username}
               className="form-control"
               id="username"
               required
-              onChange={(e) => setusername(e.target.value)}
+              onChange={handleChange}
             />
           </div>
           <div className="mb-3">
@@ -56,8 +66,8 @@ const Login = () => {
               className="form-control"
               id="exampleInputPassword1"
               required
-              value={password}
-              onChange={(e) => setpassword(e.target.value)}
+              value={state.password}
+              onChange={handleChange}
             />
           </div>
           <button

@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../auth/Provider';
@@ -13,11 +14,11 @@ const SignUp = () => {
     height: '',
     address: '',
     dob: '',
-    pic: '',
+    profile_picture: '',
     role: 'user',
-    price: '',
     appointments: [],
   });
+  const [message, setMessage] = useState('');
 
   const handleChange = (e) => {
     setState({
@@ -29,22 +30,18 @@ const SignUp = () => {
 
   const handlelogin = (e) => {
     e.preventDefault();
-    // let item = {
-    //     "username": username,
-    //     "password": password
-    // }
 
-    // let res = await fetch('/', {
-    //     method: 'POST',
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //         "Accept": "application/json"
-    //     },
-    //     body: JSON.stringify(item)
-    // });
-
-    // let result = await res.json();
-    onLogin();
+    if (state.username.length === 0 || state.email_address.length === 0
+       || state.phone_number.length === 0
+       || state.password.length === 0 || state.confirm_password.length === 0) {
+      onsubmit = false;
+      setMessage('empty inputs');
+    } else if (state.password !== state.confirm_password) {
+      onsubmit = false;
+      setMessage('password mismatch');
+    } else {
+      onLogin();
+    }
   };
 
   return (
@@ -82,6 +79,16 @@ const SignUp = () => {
               onChange={handleChange}
             />
           </div>
+          <div className="mb-3">
+            <label htmlFor="confirm-password" className="form-label">Password</label>
+            <input
+              type="password"
+              className="form-control"
+              id="confirm-password"
+              value={state.confirm_password}
+              onChange={handleChange}
+            />
+          </div>
           <button
             type="submit"
             onClick={handlelogin}
@@ -95,6 +102,8 @@ const SignUp = () => {
             Already Have an account?
             <Link className="text-warning" to="/login"> Log In</Link>
           </p>
+          {message === 'empty inputs' && <p className="fw-bold text-center text-danger">Please fill out all required inputs</p>}
+          {message === 'password mismatch' && <p className="fw-bold text-center text-danger">Please make sure passwords match</p>}
         </div>
       </div>
     </section>

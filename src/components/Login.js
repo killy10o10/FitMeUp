@@ -5,6 +5,7 @@ import { useAuth } from '../auth/Provider';
 const Login = () => {
   const [username, setusername] = useState('');
   const [password, setpassword] = useState('');
+  const [message, setMessage] = useState(true);
   const { onLogin } = useAuth();
 
   const handlelogin = (e) => {
@@ -28,6 +29,7 @@ const Login = () => {
       onLogin();
     } else {
       onsubmit = false;
+      setMessage(false);
     }
   };
 
@@ -68,9 +70,10 @@ const Login = () => {
         </form>
         <div className="mt-1">
           <p className="fw-bold">
-            Don&apos;t Have an account?
+            Dont Have an account?
             <Link className="text-warning" to="/signup"> Sign Up</Link>
           </p>
+          {message === false && <p className="fw-bold text-center text-danger">Please fill out all inputs</p>}
         </div>
       </div>
     </section>

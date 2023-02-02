@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import Sidebars from './components/Sidebar';
 import { FitMeUpThunk } from './redux/fitMeUpSlice';
 import { SpecilatiyThunk } from './redux/specilatiySlice';
-import { userThunk } from './redux/userSlice';
 import Home from './components/Home';
 import Appointment from './components/Appointment';
 import TrainerDetails from './components/TrainerDetails';
@@ -22,6 +21,8 @@ const App = () => {
   const trainersArray = useSelector((state) => state.trainers);
   const specilatiyArray = useSelector((state) => state.specilatiys);
   const user = useSelector((state) => state.currentuser.user);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (trainersArray.length === 0) {
@@ -38,24 +39,40 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home trainers={trainersArray} />} />
         <Route path="/login" element={<Login />} />
-         <Route path="/signup" element={<SignUp />} />
-        <Route path="/appointment" element={(
+        <Route path="/signup" element={<SignUp />} />
+        <Route
+          path="/appointment"
+          element={(
             <ProtectedRoute>
               <Appointment trainers={trainersArray} />
-            </ProtectedRoute>)} />
-        <Route path="/trainerDetails" element={(
+            </ProtectedRoute>
+)}
+        />
+        <Route
+          path="/trainerDetails"
+          element={(
             <ProtectedRoute>
               <TrainerDetails />
-            </ProtectedRoute> )}/>
+            </ProtectedRoute>
+ )}
+        />
         <Route path="/search" element={<SearchLocation />} />
-        <Route path="/specilatiy" element={(
+        <Route
+          path="/specilatiy"
+          element={(
             <ProtectedRoute>
               <Specilatiy specilatiy={specilatiyArray} />
-            </ProtectedRoute> )} />
-        <Route path="/trainer" element={(
+            </ProtectedRoute>
+ )}
+        />
+        <Route
+          path="/trainer"
+          element={(
             <ProtectedRoute>
               <Trainer trainers={trainersArray} />
-            </ProtectedRoute> )} />
+            </ProtectedRoute>
+ )}
+        />
       </Routes>
     </div>
   );

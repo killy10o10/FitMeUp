@@ -23,8 +23,8 @@ const Login = () => {
   const handlelogin = (e) => {
     e.preventDefault();
     const item = {
-      username:state.username,
-      password:state.password,
+      username: state.username,
+      password: state.password,
     };
     if (state.username.length !== 0 && state.password.length !== 0) {
       dispatch(fetchdata(item));
@@ -32,7 +32,7 @@ const Login = () => {
     } else {
       onsubmit = false;
       setMessage(false);
-    }    
+    }
   };
 
   return (

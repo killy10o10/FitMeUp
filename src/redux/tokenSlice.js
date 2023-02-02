@@ -33,7 +33,7 @@ export default UserSlice.reducer;
 export function fetchdata(item) {
   return async function fetchdataThunk(dispatch) {
     try {
-      const { token } =await gettoken(item);
+      const { token } = await gettoken(item);
       dispatch(settoken(token));
       if (token !== 'unauthorized') {
         const data = await loginUser(token);

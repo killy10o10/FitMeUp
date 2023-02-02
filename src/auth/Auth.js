@@ -1,5 +1,4 @@
-import { useSelector } from 'react-redux';
-
+/* eslint no-return-await: "error" */
 export const signupUser = async (data) => (
   await (await fetch('http://127.0.0.1:3001/api/v1/users', {
     method: 'POST',

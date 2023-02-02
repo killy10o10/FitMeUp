@@ -58,6 +58,7 @@ const Trainer = ({ trainers }) => {
           <label htmlFor="username" className="form-label">Username</label>
           <input
             type="text"
+            name="username"
             className="form-control"
             id="username"
             value={state.username}

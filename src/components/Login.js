@@ -2,12 +2,24 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { fetchdata } from '../redux/tokenSlice';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
-  const [username, setusername] = useState('');
-  const [password, setpassword] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [state, setState] = useState({
+    username: '',
+    password: '',
+  });
+
+const handleChange = (e) => {
+    setState((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const [message, setMessage] = useState(true);
 
   const handlelogin = (e) => {
     e.preventDefault();
@@ -15,6 +27,13 @@ const Login = () => {
       username,
       password,
     };
+     if (state.username.length !== 0 && state.password.length !== 0) {
+      onLogin();
+    } else {
+      onsubmit = false;
+      setMessage(false);
+    }
+
     dispatch(fetchdata(item));
     navigate('/');
   };
@@ -28,20 +47,24 @@ const Login = () => {
             <label htmlFor="username" className="form-label">Username</label>
             <input
               type="text"
-              value={username}
+              name="username"
+              value={state.username}
               className="form-control"
               id="username"
-              onChange={(e) => setusername(e.target.value)}
+              required
+              onChange={handleChange}
             />
           </div>
           <div className="mb-3">
             <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
             <input
               type="password"
+              name="password"
               className="form-control"
               id="exampleInputPassword1"
-              value={password}
-              onChange={(e) => setpassword(e.target.value)}
+              required
+              value={state.password}
+              onChange={handleChange}
             />
           </div>
           <button
@@ -49,9 +72,16 @@ const Login = () => {
             onClick={handlelogin}
             className="btn btn-primary align-self-center"
           >
-            Sign In
+            Log In
           </button>
         </form>
+        <div className="mt-1">
+          <p className="fw-bold">
+            Dont Have an account?
+            <Link className="text-warning" to="/signup"> Sign Up</Link>
+          </p>
+          {message === false && <p className="fw-bold text-center text-danger animate__animated animate__bounceIn">Please fill out all inputs</p>}
+        </div>
       </div>
     </section>
   );

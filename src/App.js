@@ -16,13 +16,12 @@ import Specilatiy from './components/Specilatiy';
 import Trainer from './components/Trainer';
 import Login from './components/Login';
 import ProtectedRoute from './auth/ProtectedRoute';
+import SignUp from './components/SignUp';
 
 const App = () => {
   const trainersArray = useSelector((state) => state.trainers);
   const specilatiyArray = useSelector((state) => state.specilatiys);
   const user = useSelector((state) => state.currentuser.user);
-
-  const dispatch = useDispatch();
 
   useEffect(() => {
     if (trainersArray.length === 0) {
@@ -39,6 +38,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home trainers={trainersArray} />} />
         <Route path="/login" element={<Login />} />
+         <Route path="/signup" element={<SignUp />} />
         <Route path="/appointment" element={(
             <ProtectedRoute>
               <Appointment trainers={trainersArray} />

@@ -7,7 +7,7 @@ const TrainerDetails = () => {
   const location = useLocation();
   const [displayStatus, updateDisplayStatus] = useState(false);
   const { state } = location;
-  const trainerSpecialty = state.speciality.map((item) => item).join(', ');
+  const trainerSpecialty = state.specialities.map((item) => item).join(', ');
 
   const displayHandler = () => {
     updateDisplayStatus(!displayStatus);

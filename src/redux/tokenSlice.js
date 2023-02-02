@@ -40,7 +40,8 @@ export function fetchdata(item) {
         dispatch(SpecilatiyThunk(token));
       }
     } catch (error) {
-      console.log('Unauthorized');
+      // eslint-disable-next-line no-console
+      console.warn('Unauthorized');
     }
   };
 }

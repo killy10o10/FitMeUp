@@ -31,7 +31,6 @@ const Trainer = ({ trainers }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     trainerForm(state, token);
-    console.log(state);
   };
 
   return (

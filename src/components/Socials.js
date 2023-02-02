@@ -1,11 +1,7 @@
 import React from 'react';
-import {
-  FaLinkedinIn,
-  BsTwitter,
-  TfiGoogle,
-  FaFacebookF,
-  FaPinterestP,
-} from 'react-icons/all';
+import { FaLinkedinIn, FaFacebookF, FaPinterestP } from 'react-icons/fa';
+import { BsTwitter } from 'react-icons/bs';
+import { TfiGoogle } from 'react-icons/tfi';
 
 const Socials = () => (
   <footer className="socials">

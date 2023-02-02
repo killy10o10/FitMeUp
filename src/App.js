@@ -20,7 +20,7 @@ import ProtectedRoute from './auth/ProtectedRoute';
 const App = () => {
   const trainersArray = useSelector((state) => state.trainers);
   const specilatiyArray = useSelector((state) => state.specilatiys);
-  const userArray = useSelector((state) => state.users);
+  const user = useSelector((state) => state.currentuser.user);
 
   const dispatch = useDispatch();
 
@@ -31,9 +31,6 @@ const App = () => {
     if (specilatiyArray.length === 0) {
       dispatch(SpecilatiyThunk());
     }
-    if (userArray.length === 0) {
-      dispatch(userThunk());
-    }
   }, []);
 
   return (
@@ -42,39 +39,23 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home trainers={trainersArray} />} />
         <Route path="/login" element={<Login />} />
-        <Route
-          path="/appointment"
-          element={(
+        <Route path="/appointment" element={(
             <ProtectedRoute>
               <Appointment trainers={trainersArray} />
-            </ProtectedRoute>
-)}
-        />
-        <Route
-          path="/trainerDetails"
-          element={(
+            </ProtectedRoute>)} />
+        <Route path="/trainerDetails" element={(
             <ProtectedRoute>
               <TrainerDetails />
-            </ProtectedRoute>
-)}
-        />
+            </ProtectedRoute> )}/>
         <Route path="/search" element={<SearchLocation />} />
-        <Route
-          path="/specilatiy"
-          element={(
+        <Route path="/specilatiy" element={(
             <ProtectedRoute>
               <Specilatiy specilatiy={specilatiyArray} />
-            </ProtectedRoute>
-)}
-        />
-        <Route
-          path="/trainer"
-          element={(
+            </ProtectedRoute> )} />
+        <Route path="/trainer" element={(
             <ProtectedRoute>
-              <Trainer users={userArray} trainers={trainersArray} />
-            </ProtectedRoute>
-)}
-        />
+              <Trainer trainers={trainersArray} />
+            </ProtectedRoute> )} />
       </Routes>
     </div>
   );

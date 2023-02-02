@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { fetchdata } from '../redux/tokenSlice';
-import { Link } from 'react-router-dom';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -12,7 +11,7 @@ const Login = () => {
     password: '',
   });
 
-const handleChange = (e) => {
+  const handleChange = (e) => {
     setState((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
@@ -24,18 +23,16 @@ const handleChange = (e) => {
   const handlelogin = (e) => {
     e.preventDefault();
     const item = {
-      username,
-      password,
+      username:state.username,
+      password:state.password,
     };
-     if (state.username.length !== 0 && state.password.length !== 0) {
-      onLogin();
+    if (state.username.length !== 0 && state.password.length !== 0) {
+      dispatch(fetchdata(item));
+      navigate('/');
     } else {
       onsubmit = false;
       setMessage(false);
-    }
-
-    dispatch(fetchdata(item));
-    navigate('/');
+    }    
   };
 
   return (

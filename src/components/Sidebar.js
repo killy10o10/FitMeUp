@@ -2,17 +2,15 @@ import { Link } from 'react-router-dom';
 import {
   Sidebar, Menu, MenuItem, useProSidebar,
 } from 'react-pro-sidebar';
+import { useSelector } from 'react-redux';
 import Socials from './Socials';
 import logo from '../images/fitmeup-logo.svg';
 
-import { useSelector } from 'react-redux';
-
 const Sidebars = () => {
   const { collapseSidebar, collapsed } = useProSidebar();
-  const userArray = useSelector((state) => state.users);
   const token = useSelector((state) => state.currentuser.token);
-   
-   const handleClick = () => {
+
+  const handleClick = () => {
     collapseSidebar();
   };
 
@@ -44,14 +42,6 @@ const Sidebars = () => {
           </MenuItem>
           <MenuItem
             className="sidebar-component-item"
-            component={<Link to="/date" />}
-            onClick={handleClick}
-          >
-            {' '}
-            Book
-          </MenuItem>
-          <MenuItem
-            className="sidebar-component-item"
             component={<Link to="/appointment" />}
             onClick={handleClick}
           >
@@ -75,14 +65,9 @@ const Sidebars = () => {
             Trainer
           </MenuItem>
           <MenuItem
-
             component={token ? <Link to="/" />
               : <Link to="/login" />}
-            onClick={() => collapseSidebar()}
             className="sidebar-component-item"
-            component={
-              token ? <Link to="/" onClick={onLogout} /> : <Link to="/login" />
-            }
             onClick={handleClick}
           >
             {token ? 'Sign Out' : 'Sign In'}

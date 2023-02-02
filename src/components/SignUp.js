@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../auth/Provider';
 
-const Login = () => {
+const SignUp = () => {
   const [username, setusername] = useState('');
   const [password, setpassword] = useState('');
   const { onLogin } = useAuth();
@@ -59,15 +59,9 @@ const Login = () => {
             Sign In
           </button>
         </form>
-        <div className="mt-1">
-          <p className="fw-bold">
-            Don&apos;t Have an account?
-            <a href="/" className="text-warning"> Sign Up</a>
-          </p>
-        </div>
       </div>
     </section>
   );
 };
 
-export default Login;
+export default SignUp;

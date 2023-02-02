@@ -148,6 +148,10 @@ body {
     flex: 0.5;
   }
 
+  .trainer-details-section .trainer-img img {
+    width: 80%;
+  }
+
   .trainer-details-section {
     flex-direction: column;
   }

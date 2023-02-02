@@ -15,7 +15,6 @@ import SearchLocation from './components/SearchLocation';
 import Specilatiy from './components/Specilatiy';
 import Trainer from './components/Trainer';
 import Login from './components/Login';
-import { AuthProvider } from './auth/Provider';
 import ProtectedRoute from './auth/ProtectedRoute';
 
 const App = () => {
@@ -39,46 +38,44 @@ const App = () => {
 
   return (
     <div className="App">
-      <AuthProvider>
-        <Sidebars />
-        <Routes>
-          <Route path="/" element={<Home trainers={trainersArray} />} />
-          <Route path="/login" element={<Login />} />
-          <Route
-            path="/appointment"
-            element={(
-              <ProtectedRoute>
-                <Appointment trainers={trainersArray} />
-              </ProtectedRoute>
+      <Sidebars />
+      <Routes>
+        <Route path="/" element={<Home trainers={trainersArray} />} />
+        <Route path="/login" element={<Login />} />
+        <Route
+          path="/appointment"
+          element={(
+            <ProtectedRoute>
+              <Appointment trainers={trainersArray} />
+            </ProtectedRoute>
 )}
-          />
-          <Route
-            path="/trainerDetails"
-            element={(
-              <ProtectedRoute>
-                <TrainerDetails />
-              </ProtectedRoute>
+        />
+        <Route
+          path="/trainerDetails"
+          element={(
+            <ProtectedRoute>
+              <TrainerDetails />
+            </ProtectedRoute>
 )}
-          />
-          <Route path="/search" element={<SearchLocation />} />
-          <Route
-            path="/specilatiy"
-            element={(
-              <ProtectedRoute>
-                <Specilatiy specilatiy={specilatiyArray} />
-              </ProtectedRoute>
+        />
+        <Route path="/search" element={<SearchLocation />} />
+        <Route
+          path="/specilatiy"
+          element={(
+            <ProtectedRoute>
+              <Specilatiy specilatiy={specilatiyArray} />
+            </ProtectedRoute>
 )}
-          />
-          <Route
-            path="/trainer"
-            element={(
-              <ProtectedRoute>
-                <Trainer users={userArray} trainers={trainersArray} />
-              </ProtectedRoute>
+        />
+        <Route
+          path="/trainer"
+          element={(
+            <ProtectedRoute>
+              <Trainer users={userArray} trainers={trainersArray} />
+            </ProtectedRoute>
 )}
-          />
-        </Routes>
-      </AuthProvider>
+        />
+      </Routes>
     </div>
   );
 };

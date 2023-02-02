@@ -37,7 +37,6 @@ const Sidebars = () => {
             component={<Link to="/" />}
             onClick={handleClick}
           >
-            {' '}
             Home
           </MenuItem>
           <MenuItem
@@ -45,26 +44,33 @@ const Sidebars = () => {
             component={<Link to="/appointment" />}
             onClick={handleClick}
           >
-            {' '}
             Appoinment
           </MenuItem>
-          {user.token && user.role=== 'admin' ? <>
           <MenuItem
             className="sidebar-component-item"
-            component={<Link to="/specilatiy" />}
+            component={<Link to="/appointment-details" />}
             onClick={handleClick}
           >
-            {' '}
-            Specilatiy
+            Appoint. Details
           </MenuItem>
-          <MenuItem
-            className="sidebar-component-item"
-            component={<Link to="/trainer" />}
-            onClick={handleClick}
-          >
-            {' '}
-            Trainer
-          </MenuItem>
+          {user.token && user.data.role === 'admin' ? (
+            <>
+              <MenuItem
+                className="sidebar-component-item"
+                component={<Link to="/specilatiy" />}
+                onClick={handleClick}
+              >
+                Specilatiy
+              </MenuItem>
+              <MenuItem
+                className="sidebar-component-item"
+                component={<Link to="/trainer" />}
+                onClick={handleClick}
+              >
+                Trainer
+              </MenuItem>
+            </>
+          ) : null}
           <MenuItem
             component={user.token ? <Link to="/" />
               : <Link to="/login" />}
@@ -73,7 +79,6 @@ const Sidebars = () => {
           >
             {user.token ? 'Sign Out' : 'Sign In'}
           </MenuItem>
-          </>:null}
         </Menu>
         <footer>
           <Socials />

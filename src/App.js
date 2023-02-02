@@ -6,7 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Sidebars from './components/Sidebar';
 import { FitMeUpThunk } from './redux/fitMeUpSlice';
-import { SpecilatiyThunk } from './redux/specilatiySlice';
+
 import Home from './components/Home';
 import Appointment from './components/Appointment';
 import TrainerDetails from './components/TrainerDetails';
@@ -16,6 +16,7 @@ import Trainer from './components/Trainer';
 import Login from './components/Login';
 import ProtectedRoute from './auth/ProtectedRoute';
 import SignUp from './components/SignUp';
+import AppoinmentDetails from './components/AppoinmentDetails';
 
 const App = () => {
   const trainersArray = useSelector((state) => state.trainers);
@@ -27,9 +28,6 @@ const App = () => {
     if (trainersArray.length === 0) {
       dispatch(FitMeUpThunk());
     }
-    if (specilatiyArray.length === 0) {
-      dispatch(SpecilatiyThunk());
-    }
   }, []);
 
   return (
@@ -39,6 +37,14 @@ const App = () => {
         <Route path="/" element={<Home trainers={trainersArray} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route
+          path="/appointment-details"
+          element={(
+            <ProtectedRoute>
+              <AppoinmentDetails />
+            </ProtectedRoute>
+      )}
+        />
         <Route
           path="/appointment"
           element={(

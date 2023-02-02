@@ -1,5 +1,6 @@
 /* eslint no-param-reassign: "error" */
 import { createSlice } from '@reduxjs/toolkit';
+import { SpecilatiyThunk } from './specilatiySlice';
 import { gettoken, loginUser } from '../auth/Auth';
 
 export const UserSlice = createSlice({
@@ -38,6 +39,7 @@ export function fetchdata(item) {
       if (token !== 'unauthorized') {
         const data = await loginUser(token);
         dispatch(getdata(data));
+        dispatch(SpecilatiyThunk(token));
       }
     } catch (error) {
       console.log('Unauthorized');

@@ -1,3 +1,8 @@
+/* eslint-disable no-return-await */
+// import { getdata } from "../redux/tokenSlice";
+// import { settoken } from "../redux/tokenSlice";
+// import { useDispatch } from "react-redux";
+
 /* eslint no-return-await: "error" */
 export const signupUser = async (data) => (
   await (await fetch('http://127.0.0.1:3001/api/v1/users', {
@@ -30,6 +35,12 @@ export const loginUser = async (token) => (await (await fetch('http://127.0.0.1:
   },
 })).json());
 
+// export const logoutUser = () => {
+//   const dispatch = useDispatch();
+//   dispatch(settoken(null));
+//   dispatch(getdata(null));
+// };
+
 // export const logoutUser = () => (dispatch) => fetch('http://localhost:3000/logout', {
 //   method: 'DELETE',
 //   headers: {
@@ -48,3 +59,15 @@ export const loginUser = async (token) => (await (await fetch('http://127.0.0.1:
 //     return Promise.reject(errors);
 //   });
 // });
+
+// export const speciality = async (data,token) => (
+//   await (await fetch('http://127.0.0.1:3001/api/v1/specialities', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//       Accept: 'application/json',
+//       Authorization:token
+//     },
+//     body: JSON.stringify(data),
+//   })).json()
+// );

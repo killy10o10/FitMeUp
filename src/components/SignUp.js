@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-// import { useAuth } from '../auth/Provider';
+import { signupUser } from '../auth/Auth';
 
 const SignUp = () => {
   const [state, setState] = useState({
@@ -27,8 +27,6 @@ const SignUp = () => {
     }));
   };
 
-  // const { onLogin } = useAuth();
-
   const handlelogin = (e) => {
     e.preventDefault();
 
@@ -44,7 +42,7 @@ const SignUp = () => {
       onsubmit = false;
       setMessage('password mismatch');
     } else {
-      onLogin();
+      signupUser(state);
     }
   };
 

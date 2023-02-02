@@ -68,9 +68,8 @@ input::placeholder {
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
 }
 
-.sidebar-component header {
-  margin-top: 30px;
-  margin-bottom: 60px;
+.sidebar-component .logo-header img {
+  width: 150px;
 }
 
 .sidebar-component-title {
@@ -92,13 +91,19 @@ input::placeholder {
   color: white;
 }
 
+@media only screen and (min-width: 600px) {
+  .sidebar-component {
+    height: 100vh;
+  }
+}
+
 .socials {
-  position: absolute;
-  bottom: 29px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 55px;
+  margin-bottom: 20px;
 }
 
 .socials-container {
@@ -110,6 +115,7 @@ input::placeholder {
 
 .socials-link {
   display: block;
+  font-size: 20px;
   color: #3b3737;
 }
 
@@ -127,4 +133,32 @@ body {
   color: #fff !important;
   background-color: #96bf02 !important;
   box-shadow: 0 0 2px 0 #333;
+}
+
+.trainer-details-section .trainer-img {
+  flex: 0.8;
+}
+
+.trainer-details table,
+.bio {
+  width: 50vmin;
+}
+
+@media only screen and (max-width: 600px) {
+  .trainer-details-section .trainer-img {
+    flex: 0.5;
+  }
+
+  .trainer-details-section .trainer-img img {
+    width: 80%;
+  }
+
+  .trainer-details-section {
+    flex-direction: column;
+  }
+
+  .trainer-details table,
+  .bio {
+    width: 90vw;
+  }
 }

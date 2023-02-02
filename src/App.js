@@ -17,12 +17,12 @@ import Trainer from './components/Trainer';
 import Login from './components/Login';
 import { AuthProvider } from './auth/Provider';
 import ProtectedRoute from './auth/ProtectedRoute';
+import SignUp from './components/SignUp';
 
 const App = () => {
   const trainersArray = useSelector((state) => state.trainers);
   const specilatiyArray = useSelector((state) => state.specilatiys);
   const userArray = useSelector((state) => state.users);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -44,6 +44,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home trainers={trainersArray} />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route
             path="/appointment"
             element={(

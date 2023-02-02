@@ -5,6 +5,11 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 #root {
   height: 100vh;
 }
@@ -253,21 +258,6 @@ select {
   width: 80%;
   border: 4px #96bf02;
   border-style: dotted none none none;
-}
-
-.trainer-handles * {
-  border: rgb(221, 220, 220) solid 1px;
-  color: grey;
-  border-radius: 50%;
-  font-size: 20px;
-  text-align: center;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
-
-.trainer-details .trainer-img {
-  flex: 0.8;
 }
 
 /* Scrollbar Styling */

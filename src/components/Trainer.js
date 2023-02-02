@@ -19,10 +19,10 @@ const Trainer = ({ trainers }) => {
   });
 
   const handleChange = (e) => {
-    setState({
-      ...state,
+    setState((prevState) => ({
+      ...prevState,
       [e.target.name]: e.target.value,
-    });
+    }));
   };
 
   return (

@@ -1,29 +1,22 @@
 import React, { useState } from 'react';
-import { useAuth } from '../auth/Provider';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { fetchdata } from '../redux/tokenSlice';
 
 const Login = () => {
   const [username, setusername] = useState('');
   const [password, setpassword] = useState('');
-  const { onLogin } = useAuth();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handlelogin = (e) => {
     e.preventDefault();
-    // let item = {
-    //     "username": username,
-    //     "password": password
-    // }
-
-    // let res = await fetch('/', {
-    //     method: 'POST',
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //         "Accept": "application/json"
-    //     },
-    //     body: JSON.stringify(item)
-    // });
-
-    // let result = await res.json();
-    onLogin();
+    const item = {
+      username,
+      password,
+    };
+    dispatch(fetchdata(item));
+    navigate('/');
   };
 
   return (

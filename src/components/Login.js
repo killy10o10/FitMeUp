@@ -24,7 +24,11 @@ const Login = () => {
     // });
 
     // let result = await res.json();
-    onLogin();
+    if (username.length !== 0 && password.length !== 0) {
+      onLogin();
+    } else {
+      onsubmit = false;
+    }
   };
 
   return (
@@ -39,6 +43,7 @@ const Login = () => {
               value={username}
               className="form-control"
               id="username"
+              required
               onChange={(e) => setusername(e.target.value)}
             />
           </div>
@@ -48,6 +53,7 @@ const Login = () => {
               type="password"
               className="form-control"
               id="exampleInputPassword1"
+              required
               value={password}
               onChange={(e) => setpassword(e.target.value)}
             />

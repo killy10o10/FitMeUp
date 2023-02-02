@@ -3,8 +3,28 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../auth/Provider';
 
 const SignUp = () => {
-  const [username, setusername] = useState('');
-  const [password, setpassword] = useState('');
+  const [state, setState] = useState({
+    username: '',
+    email_address: '',
+    phone_number: '',
+    password: '',
+    confirm_password: '',
+    weight: '',
+    height: '',
+    address: '',
+    dob: '',
+    pic: '',
+    role: 'user',
+    price: '',
+    appointments: [],
+  });
+
+  const handleChange = (e) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    });
+  };
   const { onLogin } = useAuth();
 
   const handlelogin = (e) => {
@@ -36,20 +56,30 @@ const SignUp = () => {
             <label htmlFor="username" className="form-label">Username</label>
             <input
               type="text"
-              value={username}
+              value={state.username}
               className="form-control"
               id="username"
-              onChange={(e) => setusername(e.target.value)}
+              onChange={handleChange}
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+            <label htmlFor="email" className="form-label">Email Address</label>
+            <input
+              type="email"
+              value={state.email_address}
+              className="form-control"
+              id="email"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="password" className="form-label">Password</label>
             <input
               type="password"
               className="form-control"
-              id="exampleInputPassword1"
-              value={password}
-              onChange={(e) => setpassword(e.target.value)}
+              id="password"
+              value={state.password}
+              onChange={handleChange}
             />
           </div>
           <button

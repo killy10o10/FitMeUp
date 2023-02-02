@@ -13,7 +13,7 @@ const TrainerDetails = () => {
     updateDisplayStatus(!displayStatus);
   };
   return (
-    <section className="trainer-details-section h-100 align-items-center d-flex position-relative">
+    <section className="trainer-details-section align-items-center d-flex position-relative">
       <div className="trainer-img d-flex justify-content-center">
         <img className="img-fluid" src={state.profile_pic} alt={state.full_name} />
       </div>

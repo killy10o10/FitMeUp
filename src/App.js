@@ -23,7 +23,6 @@ const App = () => {
   const trainersArray = useSelector((state) => state.trainers);
   const specilatiyArray = useSelector((state) => state.specilatiys);
   const userArray = useSelector((state) => state.users);
-
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -45,7 +45,9 @@ const Trainer = ({ trainers }) => {
         <div className="mb-3">
           <label htmlFor="pic" className="form-label">Profile pic</label>
           <input
-            type="number"
+            type="text"
+            name="pic"
+            placeholder="enter image url"
             className="form-control"
             id="pic"
             value={state.pic}

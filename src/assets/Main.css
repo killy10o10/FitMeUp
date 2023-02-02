@@ -162,3 +162,17 @@ body {
     width: 90vw;
   }
 }
+
+.appoint-details-section {
+  color: #fff;
+  height: 100vh;
+  background-image: url("../images/appoint-details.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.appoint-details-section .bg-pink {
+  background-color: rgba(51, 156, 172, 0.8549019608);
+  height: 100%;
+}

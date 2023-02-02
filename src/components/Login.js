@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../auth/Provider';
 
 const Login = () => {
@@ -62,7 +63,7 @@ const Login = () => {
         <div className="mt-1">
           <p className="fw-bold">
             Don&apos;t Have an account?
-            <a href="/" className="text-warning"> Sign Up</a>
+            <Link className="text-warning" to="/signup"> Sign Up</Link>
           </p>
         </div>
       </div>

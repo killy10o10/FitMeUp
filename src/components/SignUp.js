@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../auth/Provider';
 
 const SignUp = () => {
@@ -29,7 +30,7 @@ const SignUp = () => {
   return (
     <section className="sign">
       <div className="sign-orange d-flex flex-column justify-content-center align-items-center">
-        <h1 className="text-center">Log In</h1>
+        <h1 className="text-center">Sign Up</h1>
         <form className="sign-form d-flex flex-column">
           <div className="mb-3">
             <label htmlFor="username" className="form-label">Username</label>
@@ -59,6 +60,12 @@ const SignUp = () => {
             Sign In
           </button>
         </form>
+        <div className="mt-1">
+          <p className="fw-bold">
+            Already Have an account?
+            <Link className="text-warning" to="/login"> Log In</Link>
+          </p>
+        </div>
       </div>
     </section>
   );

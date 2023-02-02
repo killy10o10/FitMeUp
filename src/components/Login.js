@@ -52,6 +52,7 @@ const Login = () => {
             <label htmlFor="username" className="form-label">Username</label>
             <input
               type="text"
+              name="username"
               value={state.username}
               className="form-control"
               id="username"
@@ -63,6 +64,7 @@ const Login = () => {
             <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
             <input
               type="password"
+              name="password"
               className="form-control"
               id="exampleInputPassword1"
               required
@@ -83,7 +85,7 @@ const Login = () => {
             Dont Have an account?
             <Link className="text-warning" to="/signup"> Sign Up</Link>
           </p>
-          {message === false && <p className="fw-bold text-center text-danger">Please fill out all inputs</p>}
+          {message === false && <p className="fw-bold text-center text-danger animate__animated animate__bounceIn">Please fill out all inputs</p>}
         </div>
       </div>
     </section>

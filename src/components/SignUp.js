@@ -126,8 +126,8 @@ const SignUp = () => {
             Already Have an account?
             <Link className="text-warning" to="/login"> Log In</Link>
           </p>
-          {message === 'empty inputs' && <p className="fw-bold text-center text-danger">Please fill out all required inputs</p>}
-          {message === 'password mismatch' && <p className="fw-bold text-center text-danger">Please make sure passwords match</p>}
+          {message === 'empty inputs' && <p className="fw-bold text-center text-danger animate__animated animate__bounceIn">Please fill out all required inputs</p>}
+          {message === 'password mismatch' && <p className="fw-bold text-center text-danger animate__animated animate__bounceIn">Please make sure passwords match</p>}
         </div>
       </div>
     </section>

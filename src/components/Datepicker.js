@@ -23,8 +23,8 @@ const Datepickers = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(bookState,user.token);
     bookTrainer(bookState, user.token);
+    // eslint-disable-next-line no-console
     console.warn('Appoiment booked');
   };
 

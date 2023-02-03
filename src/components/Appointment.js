@@ -28,7 +28,11 @@ function Appointment({ trainers }) {
               value={selectedCity}
               onChange={searchHandler}
             >
-              {trainers.map((element) => <option key={element.id} value={element.address}>{element.address}</option>)}
+              {trainers.map((element) => (
+                <option key={element.id} value={element.address}>
+                  {element.address}
+                </option>
+              ))}
             </select>
             <button type="button" className="book-btn book">
               <Link to={`/search/?location=${selectedCity}`} state={{ from: trainer }}>Search Trainer</Link>

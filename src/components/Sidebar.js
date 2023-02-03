@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 import {
   Sidebar, Menu, MenuItem, useProSidebar,
 } from 'react-pro-sidebar';
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Socials from './Socials';
 import logo from '../images/fitmeup-logo.svg';
-import {logoutUser} from '../auth/Auth';
+import logoutUser from '../auth/login';
 
 const Sidebars = () => {
   const { collapseSidebar, collapsed } = useProSidebar();
@@ -18,8 +18,7 @@ const Sidebars = () => {
 
   return (
     <div
-      className={`d-flex z-1 position-absolute ${
-        collapsed ? '' : ' shadow'
+      className={`d-flex z-1 position-absolute ${collapsed ? '' : ' shadow'
       }`}
     >
       <Sidebar
@@ -41,20 +40,6 @@ const Sidebars = () => {
           >
             Home
           </MenuItem>
-          <MenuItem
-            className="sidebar-component-item"
-            component={<Link to="/appointment" />}
-            onClick={handleClick}
-          >
-            Appoinment
-          </MenuItem>
-          <MenuItem
-            className="sidebar-component-item"
-            component={<Link to="/appointment-details" />}
-            onClick={handleClick}
-          >
-            Appoint. Details
-          </MenuItem>
           {user.token && user.data.role === 'admin' ? (
             <>
               <MenuItem
@@ -72,9 +57,27 @@ const Sidebars = () => {
                 Trainer
               </MenuItem>
             </>
-          ) : null}
+          )
+            : (
+              <>
+                <MenuItem
+                  className="sidebar-component-item"
+                  component={<Link to="/appointment" />}
+                  onClick={handleClick}
+                >
+                  Appoinment
+                </MenuItem>
+                <MenuItem
+                  className="sidebar-component-item"
+                  component={<Link to="/appointment-details" />}
+                  onClick={handleClick}
+                >
+                  Appoint. Details
+                </MenuItem>
+              </>
+            )}
           <MenuItem
-            component={user.token ? <Link to="/" onClick={()=>logoutUser(dispatch)} />
+            component={user.token ? <Link to="/" onClick={() => logoutUser(dispatch)} />
               : <Link to="/login" />}
             className="sidebar-component-item"
             onClick={handleClick}
@@ -90,8 +93,7 @@ const Sidebars = () => {
         <button
           type="button"
           onClick={handleClick}
-          className={`btn hamburger fs-3 ${
-            collapsed ? '' : ' position-absolute sidebar-btn'
+          className={`btn hamburger fs-3 ${collapsed ? '' : ' position-absolute sidebar-btn'
           }`}
         >
           <i className={`bi ${collapsed ? 'bi-list' : 'bi-x-lg'}`} />

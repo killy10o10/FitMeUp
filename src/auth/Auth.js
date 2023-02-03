@@ -1,8 +1,6 @@
 /* eslint-disable no-return-await */
 /* eslint no-return-await: "error" */
 
-import { getdata } from "../redux/tokenSlice";
-import { settoken } from "../redux/tokenSlice";
 import { appenddata } from '../redux/fitMeUpSlice';
 import { appendspecial } from '../redux/specilatiySlice';
 
@@ -84,11 +82,6 @@ export const bookTrainer = async (data, token) => (
   })).json()
 );
 
-export const logoutUser = (dispatch) => {
-  dispatch(settoken(null));
-  dispatch(getdata(null));
-};
-
 // export const logoutUser = () => (dispatch) => fetch('http://localhost:3000/logout', {
 //   method: 'DELETE',
 //   headers: {
@@ -108,16 +101,16 @@ export const logoutUser = (dispatch) => {
 //   });
 // });
 
-export const specialityForm = async (data,token,dispatch) => {
+export const specialityForm = async (data, token, dispatch) => {
   const res = await (await fetch('http://127.0.0.1:3001/api/v1/specialities', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json',
-      Authorization:token
+      Authorization: token,
     },
     body: JSON.stringify(data),
-  })).json()
+  })).json();
 
   if (res.id) dispatch(appendspecial(res));
 

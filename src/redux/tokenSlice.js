@@ -37,8 +37,7 @@ export function fetchdata(item) {
       if (token !== 'unauthorized') {
         const data = await loginUser(token);
         dispatch(getdata(data));
-        if(data.role === 'admin')
-        dispatch(SpecilatiyThunk(token));
+        if (data.role === 'admin') { dispatch(SpecilatiyThunk(token)); }
       }
     } catch (error) {
       // eslint-disable-next-line no-console

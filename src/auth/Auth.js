@@ -47,6 +47,18 @@ export const trainerForm = async (data, token) => (
   })).json()
 );
 
+export const bookTrainer = async (data, token) => (
+  await (await fetch('http://127.0.0.1:3001/api/v1/appointments', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      Authorization: token,
+    },
+    body: JSON.stringify(data),
+  })).json()
+);
+
 // export const logoutUser = () => {
 //   const dispatch = useDispatch();
 //   dispatch(settoken(null));

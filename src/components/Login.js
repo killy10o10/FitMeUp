@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useAuth } from '../auth/Provider';
+import { useDispatch } from 'react-redux';
+import { useNavigate, Link } from 'react-router-dom';
+import { fetchdata } from '../redux/tokenSlice';
 
 const Login = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [state, setState] = useState({
     username: '',
     password: '',
@@ -16,27 +19,16 @@ const Login = () => {
   };
 
   const [message, setMessage] = useState(true);
-  const { onLogin } = useAuth();
 
   const handlelogin = (e) => {
     e.preventDefault();
-    // let item = {
-    //     "username": username,
-    //     "password": password
-    // }
-
-    // let res = await fetch('/', {
-    //     method: 'POST',
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //         "Accept": "application/json"
-    //     },
-    //     body: JSON.stringify(item)
-    // });
-
-    // let result = await res.json();
+    const item = {
+      username: state.username,
+      password: state.password,
+    };
     if (state.username.length !== 0 && state.password.length !== 0) {
-      onLogin();
+      dispatch(fetchdata(item));
+      navigate('/');
     } else {
       onsubmit = false;
       setMessage(false);

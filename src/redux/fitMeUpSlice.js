@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const TrainerApiUrl = '/api/v1/trainer/trainer.json';
+const TrainerApiUrl = 'http://127.0.0.1:3001/api/v1/trainers';
 
 const TrainerRequestMethod = '/get/trainers';
 

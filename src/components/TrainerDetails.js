@@ -7,7 +7,7 @@ const TrainerDetails = () => {
   const location = useLocation();
   const [displayStatus, updateDisplayStatus] = useState(false);
   const { state } = location;
-  const trainerSpecialty = state.speciality.map((item) => item).join(', ');
+  const trainerSpecialty = state.specialities.map((item) => item).join(', ');
 
   const displayHandler = () => {
     updateDisplayStatus(!displayStatus);
@@ -51,7 +51,7 @@ const TrainerDetails = () => {
         </div>
       </div>
       <div className={`position-absolute top-0 date-div ${displayStatus ? 'd-flex' : 'd-none'}`}>
-        <Datepickers displayHandlerProp={displayHandler} />
+        <Datepickers displayHandlerProp={displayHandler} bookInfo={state} />
       </div>
     </section>
   );

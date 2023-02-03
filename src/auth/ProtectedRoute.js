@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { useAuth } from './Provider';
+import { useSelector } from 'react-redux';
 
 const ProtectedRoute = ({ children }) => {
+  const token = useSelector((state) => state.currentuser.token);
   const location = useLocation();
-  const { token } = useAuth();
   if (!token) {
     return (
       <>
@@ -14,7 +14,6 @@ const ProtectedRoute = ({ children }) => {
       </>
     );
   }
-
   return children;
 };
 

@@ -2,13 +2,14 @@ import { Link } from 'react-router-dom';
 import {
   Sidebar, Menu, MenuItem, useProSidebar,
 } from 'react-pro-sidebar';
-import { useAuth } from '../auth/Provider';
+import { useSelector } from 'react-redux';
 import Socials from './Socials';
 import logo from '../images/fitmeup-logo.svg';
 
 const Sidebars = () => {
   const { collapseSidebar, collapsed } = useProSidebar();
-  const { token, onLogout } = useAuth();
+  const user = useSelector((state) => state.currentuser);
+
   const handleClick = () => {
     collapseSidebar();
   };
@@ -36,49 +37,47 @@ const Sidebars = () => {
             component={<Link to="/" />}
             onClick={handleClick}
           >
-            {' '}
             Home
-          </MenuItem>
-          <MenuItem
-            className="sidebar-component-item"
-            component={<Link to="/date" />}
-            onClick={handleClick}
-          >
-            {' '}
-            Book
           </MenuItem>
           <MenuItem
             className="sidebar-component-item"
             component={<Link to="/appointment" />}
             onClick={handleClick}
           >
-            {' '}
             Appoinment
           </MenuItem>
           <MenuItem
             className="sidebar-component-item"
-            component={<Link to="/specilatiy" />}
+            component={<Link to="/appointment-details" />}
             onClick={handleClick}
           >
-            {' '}
-            Specilatiy
+            Appoint. Details
           </MenuItem>
+          {user.token && user.data.role === 'admin' ? (
+            <>
+              <MenuItem
+                className="sidebar-component-item"
+                component={<Link to="/specilatiy" />}
+                onClick={handleClick}
+              >
+                Speciality
+              </MenuItem>
+              <MenuItem
+                className="sidebar-component-item"
+                component={<Link to="/trainer" />}
+                onClick={handleClick}
+              >
+                Trainer
+              </MenuItem>
+            </>
+          ) : null}
           <MenuItem
+            component={user.token ? <Link to="/" />
+              : <Link to="/login" />}
             className="sidebar-component-item"
-            component={<Link to="/trainer" />}
             onClick={handleClick}
           >
-            {' '}
-            Trainer
-          </MenuItem>
-          <MenuItem
-            className="sidebar-component-item"
-            component={
-              token ? <Link to="/" onClick={onLogout} /> : <Link to="/login" />
-            }
-            onClick={handleClick}
-          >
-            {token ? 'Sign Out' : 'Sign In'}
+            {user.token ? 'Sign Out' : 'Sign In'}
           </MenuItem>
         </Menu>
         <footer>

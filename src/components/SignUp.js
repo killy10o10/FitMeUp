@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../auth/Provider';
+import { signupUser } from '../auth/Auth';
 
 const SignUp = () => {
   const [state, setState] = useState({
@@ -27,8 +27,6 @@ const SignUp = () => {
     }));
   };
 
-  const { onLogin } = useAuth();
-
   const handlelogin = (e) => {
     e.preventDefault();
 
@@ -44,7 +42,7 @@ const SignUp = () => {
       onsubmit = false;
       setMessage('password mismatch');
     } else {
-      onLogin();
+      signupUser(state);
     }
   };
 
@@ -54,7 +52,7 @@ const SignUp = () => {
         <h1 className="text-center">Sign Up</h1>
         <form className="sign-form d-flex flex-column">
           <div className="mb-3">
-            <label htmlFor="username" className="form-label">Username</label>
+            <label htmlFor="username" className="form-label">Username *</label>
             <input
               type="text"
               name="username"
@@ -65,7 +63,7 @@ const SignUp = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="email" className="form-label">Email Address</label>
+            <label htmlFor="email" className="form-label">Email Address *</label>
             <input
               type="email"
               name="email_address"
@@ -76,7 +74,7 @@ const SignUp = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="phone" className="form-label">Phone Number</label>
+            <label htmlFor="phone" className="form-label">Phone Number *</label>
             <input
               type="tel"
               name="phone_number"
@@ -92,7 +90,7 @@ const SignUp = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="password" className="form-label">Password</label>
+            <label htmlFor="password" className="form-label">Password *</label>
             <input
               type="password"
               name="password"
@@ -103,7 +101,7 @@ const SignUp = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="confirm-password" className="form-label">Password</label>
+            <label htmlFor="confirm-password" className="form-label">Confirm Password *</label>
             <input
               type="password"
               name="confirm_password"

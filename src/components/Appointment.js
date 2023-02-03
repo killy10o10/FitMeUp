@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Appointment({ trainers }) {
-  const [selectedCity, setselectedCity] = useState('UK');
+  const [selectedCity, setselectedCity] = useState('');
   let trainer = trainers.filter((element) => (element.address === selectedCity));
   const searchHandler = (e) => {
     setselectedCity(e.target.value);
@@ -28,12 +28,9 @@ function Appointment({ trainers }) {
               value={selectedCity}
               onChange={searchHandler}
             >
-              <option value="London, UK">London</option>
-              <option value="UK">UK</option>
-              <option value="mumbai">Mumbai</option>
-              <option value="congo">Congo</option>
-              <option value="accra">Accra</option>
-              <option value="New South Wales, Australia">New South Wales, Australia</option>
+              {console.log(trainers)}
+              {trainers.map((element) =>
+            { return <option key={element.id} value={element.address}>{element.address}</option>} )}
             </select>
             <button type="button" className="book-btn book">
               <Link to={`/search/?location=${selectedCity}`} state={{ from: trainer }}>Search Trainer</Link>

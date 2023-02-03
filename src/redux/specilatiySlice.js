@@ -1,13 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const SpecilatiyApiUrl = 'http://127.0.0.1:3001/api/v1/specialities';
+const SpecialityApiUrl = 'http://127.0.0.1:3001/api/v1/specialities';
 
-const SpecilatiyRequestMethod = '/get/specilatiys';
+const SpecialityRequestMethod = '/get/specilatiys';
 
 const initialState = [];
 
-export const SpecilatiyThunk = createAsyncThunk(SpecilatiyRequestMethod, async (token) => {
-  const specilatiyData = await (await (fetch(SpecilatiyApiUrl, {
+export const SpecialityThunk = createAsyncThunk(SpecialityRequestMethod, async (token) => {
+  const specialityData = await (await (fetch(SpecialityApiUrl, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -15,15 +15,19 @@ export const SpecilatiyThunk = createAsyncThunk(SpecilatiyRequestMethod, async (
       Authorization: token,
     },
   }))).json();
-  return specilatiyData;
+  return specialityData;
 });
 
-const SpecilatiySlice = createSlice({
-  name: 'Specilatiy',
+const SpecialitySlice = createSlice({
+  name: 'Speciality',
   initialState,
-  reducers: {},
+  reducers: {
+    appendspecial: (state, action) => [
+      ...state, action.payload,
+    ],
+  },
   extraReducers: (builder) => {
-    builder.addCase(SpecilatiyThunk.fulfilled, (state, action) => {
+    builder.addCase(SpecialityThunk.fulfilled, (state, action) => {
       const { payload } = action;
       return [
         ...payload,
@@ -32,4 +36,6 @@ const SpecilatiySlice = createSlice({
   },
 });
 
-export default SpecilatiySlice.reducer;
+export const { appendspecial } = SpecialitySlice.actions;
+
+export default SpecialitySlice.reducer;

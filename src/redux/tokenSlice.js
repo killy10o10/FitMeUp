@@ -1,6 +1,6 @@
 /* eslint no-param-reassign: "error" */
 import { createSlice } from '@reduxjs/toolkit';
-import { SpecilatiyThunk } from './specilatiySlice';
+import { SpecialityThunk } from './specilatiySlice';
 import { gettoken, loginUser } from '../auth/Auth';
 
 export const UserSlice = createSlice({
@@ -12,14 +12,11 @@ export const UserSlice = createSlice({
   reducers: {
     getdata: (state, action) => { state.data = action.payload; },
     settoken: (state, action) => { state.token = action.payload; },
-    // setStatus: (state, action) => { state.status = action.payload; },
-    userChange: (state, action) => {
-      state.data = state.data.map((user) => {
-        if (user.user_id !== action.payload) return user;
-        return { ...user, user: !user.user };
-      });
-    },
-    traineradd: (state, action) => { state.data = action.payload; },
+    // appendappointment: (state, action) => {
+    //   return {...state,
+    //     state.data.appointments: [...state.data.appointments,action.payload]
+    //   }
+    // },
   },
 });
 
@@ -37,7 +34,7 @@ export function fetchdata(item) {
       if (token !== 'unauthorized') {
         const data = await loginUser(token);
         dispatch(getdata(data));
-        dispatch(SpecilatiyThunk(token));
+        if (data.role === 'admin') dispatch(SpecialityThunk(token));
       }
     } catch (error) {
       // eslint-disable-next-line no-console

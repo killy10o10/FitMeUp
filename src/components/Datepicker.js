@@ -12,18 +12,18 @@ const Datepickers = (props) => {
   const user = useSelector((state) => state.currentuser);
 
   const bookState = {
-    user_id:user.data.id,
+    user_id: user.data.id,
     trainer_id: bookInfo.id,
-    appointment_date:book,
+    appointment_date: book,
   };
 
   const onChangeDate = ({ target }) => {
     setBook(target.value);
   };
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(bookState,user.token);
     bookTrainer(bookState, user.token);
     console.warn('Appoiment booked');
   };

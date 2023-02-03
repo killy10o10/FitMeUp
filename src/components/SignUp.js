@@ -16,7 +16,7 @@ const SignUp = () => {
     date_of_birth: '',
     profile_pic: '',
     confirm_password: '',
-    bio:'',
+    bio: '',
   });
   const [message, setMessage] = useState('');
 
@@ -31,9 +31,9 @@ const SignUp = () => {
     e.preventDefault();
 
     const {
-      username, email_address, phone_number, password, confirm_password,full_name,
+      username, email_address, phone_number, password, confirm_password, full_name,
     } = state;
-    if (username.length === 0 || email_address.length === 0 ||full_name.length === 0
+    if (username.length === 0 || email_address.length === 0 || full_name.length === 0
       || phone_number.length === 0
       || password.length === 0 || confirm_password.length === 0) {
       onsubmit = false;
@@ -42,7 +42,6 @@ const SignUp = () => {
       onsubmit = false;
       setMessage('password mismatch');
     } else {
-      console.log(state)
       signupUser(state);
     }
   };
@@ -52,7 +51,7 @@ const SignUp = () => {
       <div className="sign-orange d-flex flex-column justify-content-center align-items-center">
         <h1 className="text-center">Sign Up</h1>
         <form className="sign-form d-flex flex-column">
-          
+
           <div className="mb-3">
             <label htmlFor="username" className="form-label">Username *</label>
             <input
@@ -66,29 +65,29 @@ const SignUp = () => {
           </div>
 
           <div className="mb-3">
-          <label htmlFor="username" className="form-label">Full Name</label>
-          <input
-            type="text"
-            name="full_name"
-            className="form-control"
-            id="fullname"
-            value={state.full_name}
-            onChange={handleChange}
-          />
-        </div>
+            <label htmlFor="username" className="form-label">Full Name</label>
+            <input
+              type="text"
+              name="full_name"
+              className="form-control"
+              id="fullname"
+              value={state.full_name}
+              onChange={handleChange}
+            />
+          </div>
 
-        <div className="mb-3">
-          <label htmlFor="pic" className="form-label">Profile pic</label>
-          <input
-            type="text"
-            name="profile_pic"
-            placeholder="enter image url"
-            className="form-control"
-            id="pic"
-            value={state.profile_pic}
-            onChange={handleChange}
-          />
-        </div>
+          <div className="mb-3">
+            <label htmlFor="pic" className="form-label">Profile pic</label>
+            <input
+              type="text"
+              name="profile_pic"
+              placeholder="enter image url"
+              className="form-control"
+              id="pic"
+              value={state.profile_pic}
+              onChange={handleChange}
+            />
+          </div>
 
           <div className="mb-3">
             <label htmlFor="email" className="form-label">Email Address *</label>
@@ -194,15 +193,15 @@ const SignUp = () => {
           </div>
 
           <div className="mb-3">
-          <label htmlFor="bio" className="form-label">Bio</label>
-          <input
-            type="text"
-            name="bio"
-            className="form-control"
-            id="bio"
-            value={state.bio}
-            onChange={handleChange}
-          />
+            <label htmlFor="bio" className="form-label">Bio</label>
+            <input
+              type="text"
+              name="bio"
+              className="form-control"
+              id="bio"
+              value={state.bio}
+              onChange={handleChange}
+            />
           </div>
 
           <button

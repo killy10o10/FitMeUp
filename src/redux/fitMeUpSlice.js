@@ -14,7 +14,21 @@ export const FitMeUpThunk = createAsyncThunk(TrainerRequestMethod, async () => {
 const FitMeUpSlice = createSlice({
   name: 'FitMeUp',
   initialState,
-  reducers: {},
+  reducers: {
+    appenddata: (state, action) => {
+      console.log(action);
+      return [
+        ...state, action.payload,
+      ];
+    },
+
+    filterdata: (state, action) => {
+      state.filter((item) => item === action.payload);
+      return [
+        ...state.trainers, action.payload,
+      ];
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(FitMeUpThunk.fulfilled, (state, action) => {
       const { payload } = action;
@@ -24,5 +38,7 @@ const FitMeUpSlice = createSlice({
     });
   },
 });
+
+export const { appenddata } = FitMeUpSlice.actions;
 
 export default FitMeUpSlice.reducer;

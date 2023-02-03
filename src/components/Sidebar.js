@@ -2,13 +2,15 @@ import { Link } from 'react-router-dom';
 import {
   Sidebar, Menu, MenuItem, useProSidebar,
 } from 'react-pro-sidebar';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import Socials from './Socials';
 import logo from '../images/fitmeup-logo.svg';
+import {logoutUser} from '../auth/Auth';
 
 const Sidebars = () => {
   const { collapseSidebar, collapsed } = useProSidebar();
   const user = useSelector((state) => state.currentuser);
+  const dispatch = useDispatch();
 
   const handleClick = () => {
     collapseSidebar();
@@ -72,7 +74,7 @@ const Sidebars = () => {
             </>
           ) : null}
           <MenuItem
-            component={user.token ? <Link to="/" />
+            component={user.token ? <Link to="/" onClick={()=>logoutUser(dispatch)} />
               : <Link to="/login" />}
             className="sidebar-component-item"
             onClick={handleClick}

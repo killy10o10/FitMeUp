@@ -12,12 +12,6 @@ export const UserSlice = createSlice({
   reducers: {
     getdata: (state, action) => { state.data = action.payload; },
     settoken: (state, action) => { state.token = action.payload; },
-    userChange: (state, action) => {
-      state.data = state.data.map((user) => {
-        if (user.user_id !== action.payload) return user;
-        return { ...user, user: !user.user };
-      });
-    },
     // appendappointment: (state, action) => {
     //   return {...state,
     //     state.data.appointments: [...state.data.appointments,action.payload]

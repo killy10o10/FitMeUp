@@ -9,20 +9,23 @@ import { bookTrainer } from '../auth/Auth';
 const Datepickers = (props) => {
   const { displayHandlerProp, bookInfo } = props;
   const [book, setBook] = useState(moment().format('YYYY-MM-DD'));
+  const user = useSelector((state) => state.currentuser);
+
   const bookState = {
-    ...bookInfo,
-    book,
+    user_id:user.data.id,
+    trainer_id: bookInfo.id,
+    appointment_date:book,
   };
 
   const onChangeDate = ({ target }) => {
     setBook(target.value);
   };
 
-  const token = useSelector((state) => state.currentuser.token);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    bookTrainer(bookState, token);
+    bookTrainer(bookState, user.token);
+    console.warn('Appoiment booked');
   };
 
   return (

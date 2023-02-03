@@ -79,7 +79,7 @@ const Trainer = ({ trainers }) => {
             type="text"
             name="full_name"
             className="form-control"
-            id="username"
+            id="fullname"
             value={state.full_name}
             onChange={handleChange}
           />

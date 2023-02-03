@@ -60,7 +60,7 @@ const Sidebars = () => {
                 component={<Link to="/specilatiy" />}
                 onClick={handleClick}
               >
-                Specilatiy
+                Speciality
               </MenuItem>
               <MenuItem
                 className="sidebar-component-item"

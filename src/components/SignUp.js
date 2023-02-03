@@ -52,7 +52,7 @@ const SignUp = () => {
         <h1 className="text-center">Sign Up</h1>
         <form className="sign-form d-flex flex-column">
           <div className="mb-3">
-            <label htmlFor="username" className="form-label">Username</label>
+            <label htmlFor="username" className="form-label">Username *</label>
             <input
               type="text"
               name="username"
@@ -63,7 +63,7 @@ const SignUp = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="email" className="form-label">Email Address</label>
+            <label htmlFor="email" className="form-label">Email Address *</label>
             <input
               type="email"
               name="email_address"
@@ -74,7 +74,7 @@ const SignUp = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="phone" className="form-label">Phone Number</label>
+            <label htmlFor="phone" className="form-label">Phone Number *</label>
             <input
               type="tel"
               name="phone_number"
@@ -90,7 +90,7 @@ const SignUp = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="password" className="form-label">Password</label>
+            <label htmlFor="password" className="form-label">Password *</label>
             <input
               type="password"
               name="password"
@@ -101,7 +101,7 @@ const SignUp = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="confirm-password" className="form-label">Password</label>
+            <label htmlFor="confirm-password" className="form-label">Confirm Password *</label>
             <input
               type="password"
               name="confirm_password"

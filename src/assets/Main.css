@@ -176,3 +176,7 @@ body {
   background-color: rgba(51, 156, 172, 0.8549019608);
   height: 100%;
 }
+
+.appointment-details {
+  max-width: 50vw;
+}

@@ -1,9 +1,11 @@
 /* eslint-disable no-return-await */
+/* eslint no-return-await: "error" */
+
 // import { getdata } from "../redux/tokenSlice";
 // import { settoken } from "../redux/tokenSlice";
 import { appenddata } from '../redux/fitMeUpSlice';
+import { appendspecial } from '../redux/specilatiySlice';
 
-/* eslint no-return-await: "error" */
 export const signupUser = async (data) => (
   await (await fetch('http://127.0.0.1:3001/api/v1/users', {
     method: 'POST',
@@ -107,14 +109,18 @@ export const bookTrainer = async (data, token) => (
 //   });
 // });
 
-// export const speciality = async (data,token) => (
-//   await (await fetch('http://127.0.0.1:3001/api/v1/specialities', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       Accept: 'application/json',
-//       Authorization:token
-//     },
-//     body: JSON.stringify(data),
-//   })).json()
-// );
+export const specialityForm = async (data,token,dispatch) => {
+  const res = await (await fetch('http://127.0.0.1:3001/api/v1/specialities', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      Authorization:token
+    },
+    body: JSON.stringify(data),
+  })).json()
+
+  if (res.id) dispatch(appendspecial(res));
+
+  return res;
+};

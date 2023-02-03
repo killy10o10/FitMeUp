@@ -6,12 +6,11 @@ import { Routes, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Sidebars from './components/Sidebar';
 import { FitMeUpThunk } from './redux/fitMeUpSlice';
-
 import Home from './components/Home';
 import Appointment from './components/Appointment';
 import TrainerDetails from './components/TrainerDetails';
 import SearchLocation from './components/SearchLocation';
-import Specilatiy from './components/Specilatiy';
+import Speciality from './components/Speciality';
 import Trainer from './components/Trainer';
 import Login from './components/Login';
 import ProtectedRoute from './auth/ProtectedRoute';
@@ -20,7 +19,7 @@ import AppoinmentDetails from './components/AppoinmentDetails';
 
 const App = () => {
   const trainersArray = useSelector((state) => state.trainers);
-  const specilatiyArray = useSelector((state) => state.specilatiys);
+  const specialityArray = useSelector((state) => state.specialities);
 
   const dispatch = useDispatch();
 
@@ -63,10 +62,10 @@ const App = () => {
         />
         <Route path="/search" element={<SearchLocation />} />
         <Route
-          path="/specilatiy"
+          path="/speciality"
           element={(
             <ProtectedRoute>
-              <Specilatiy specilatiy={specilatiyArray} />
+              <Speciality speciality={specialityArray} />
             </ProtectedRoute>
  )}
         />

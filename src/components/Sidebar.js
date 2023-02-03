@@ -57,7 +57,7 @@ const Sidebars = () => {
             <>
               <MenuItem
                 className="sidebar-component-item"
-                component={<Link to="/specilatiy" />}
+                component={<Link to="/speciality" />}
                 onClick={handleClick}
               >
                 Speciality

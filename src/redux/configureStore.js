@@ -1,11 +1,11 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import fitMeUpSlice from './fitMeUpSlice';
-import SpecilatiySlice from './specilatiySlice';
+import SpecialitySlice from './specilatiySlice';
 import UserSliceReducer from './tokenSlice';
 
 const reducer = combineReducers({
   trainers: fitMeUpSlice,
-  specilatiys: SpecilatiySlice,
+  specialities: SpecialitySlice,
   currentuser: UserSliceReducer,
 });
 

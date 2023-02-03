@@ -16,7 +16,6 @@ const FitMeUpSlice = createSlice({
   initialState,
   reducers: {
     appenddata: (state, action) => {
-      console.log(action);
       return [
         ...state, action.payload,
       ];
@@ -25,7 +24,7 @@ const FitMeUpSlice = createSlice({
     filterdata: (state, action) => {
       state.filter((item) => item === action.payload);
       return [
-        ...state.trainers, action.payload,
+        ...state, action.payload,
       ];
     },
   },

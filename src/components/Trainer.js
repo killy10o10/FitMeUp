@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { trainerForm } from '../auth/Auth';
 
 const Trainer = ({ trainers }) => {
@@ -18,6 +18,7 @@ const Trainer = ({ trainers }) => {
     bio: '',
     price: '',
   });
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setState((prevState) => ({
@@ -30,7 +31,7 @@ const Trainer = ({ trainers }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    trainerForm(state, token);
+    trainerForm(state, token, dispatch);
   };
 
   return (

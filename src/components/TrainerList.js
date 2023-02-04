@@ -3,6 +3,7 @@
 /* eslint-disable react/prop-types */
 import { NavLink } from 'react-router-dom';
 import Carousel from 'react-elastic-carousel';
+import { useSelector } from 'react-redux';
 import getBackgroundColor from '../scripts/bgColor';
 
 const breakPoints = [
@@ -15,7 +16,8 @@ const breakPoints = [
 const TrainerList = (props) => {
   const { trainers } = props;
   const trainerCardBackgroundColors = getBackgroundColor(trainers.length);
-
+  const currentUser = useSelector((state) => state.currentuser);
+  console.log(currentUser);
   const trainerCard = trainers.map((item, index) => {
     const { full_name, profile_pic, bio } = item;
     const limitedBio = bio ? bio.split(' ').slice(0, 15).join(' ') : '';

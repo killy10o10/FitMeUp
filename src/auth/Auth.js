@@ -15,25 +15,7 @@ export const signupUser = async (data) => (
   })).json()
 );
 
-export const gettoken = async (item) => (
-  await (await fetch('http://127.0.0.1:3001/api/v1/secure/auth_login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-    body: JSON.stringify(item),
-  })).json()
-);
-
-export const loginUser = async (token) => (await (await fetch('http://127.0.0.1:3001/api/v1/users', {
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/json',
-    Accept: 'application/json',
-    Authorization: token,
-  },
-})).json());
+// export const loginUser = async (token) => 
 
 export const trainerForm = async (data, token, dispatch) => {
   const res = await (await fetch('http://127.0.0.1:3001/api/v1/users', {

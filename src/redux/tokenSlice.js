@@ -67,6 +67,18 @@ export const getUser = createAsyncThunk('/jcjdc/adahgshs', async (item) => {
   };
 });
 
+export const UserUpdateThunk = createAsyncThunk('/get/updated_user', async (token) => {
+  const user = (await (await fetch('http://127.0.0.1:3001/api/v1/users', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      Authorization: token,
+    },
+  })).json());
+  return user;
+});
+
 const UserSlice = createSlice({
   name: 'user',
   initialState: {
@@ -100,6 +112,10 @@ const UserSlice = createSlice({
         specialities,
       };
     });
+    builder.addCase(UserUpdateThunk.fulfilled, (state, action) => ({
+      ...state,
+      data: action.payload,
+    }));
   },
 });
 

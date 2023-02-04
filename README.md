@@ -25,8 +25,13 @@
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 FitMeUP <a name="about-project"></a>
-
 >
+
+##### Please use  Port 3001 in backend
+
+`
+rails s -p 3001
+`
 
 ## 🛠 Built With <a name="built-with"></a>
 

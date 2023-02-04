@@ -3,7 +3,6 @@
 /* eslint-disable react/prop-types */
 import { NavLink } from 'react-router-dom';
 import Carousel from 'react-elastic-carousel';
-import { useSelector } from 'react-redux';
 import getBackgroundColor from '../scripts/bgColor';
 
 const breakPoints = [

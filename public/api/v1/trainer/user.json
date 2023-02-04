@@ -1,0 +1,28 @@
+[{
+    "id": 2,
+    "username": "itz_me_killy",
+    "full_name": "Killy Quami",
+    "date_of_birth": "2000-01-01",
+    "address": "Accra, GHANA",
+    "email_address": "killy@gmail.com",
+    "password_digest": "$2a$12$8BI16E9O..skMkJaLQttFuFJk8PBVJ5NS3YbQpImhbuR5wF4PwPca",
+    "phone_number": "+91 1234567890",
+    "health_info": null,
+    "height_in_meter": null,
+    "weight_in_kg": null,
+    "profile_pic": "https://unsplash.com/photos/iEEBWgY_6lA",
+    "role": "user",
+    "appointments": [
+        {
+            "id": 4,
+            "appointment_url": "http://127.0.0.1:3000/api/v1/appointments/2",
+            "price": "10.25",
+            "bio": null,
+            "full_name": "Justice Bajeri",
+            "profile_pic": "https://unsplash.com/photos/iEEBWgY_6lA",
+            "appointment_date": "2023-02-14",
+            "appointment_status": "pending",
+            "context": null
+        }
+    ]
+}]

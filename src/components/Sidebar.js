@@ -2,9 +2,7 @@ import { Link } from 'react-router-dom';
 import {
   Sidebar, Menu, MenuItem, useProSidebar,
 } from 'react-pro-sidebar';
-import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { SpecialityThunk } from '../redux/tokenSlice';
 import { UserUpdateThunk } from '../redux/tokenSlice';
 import Socials from './Socials';
 import logo from '../images/fitmeup-logo.svg';

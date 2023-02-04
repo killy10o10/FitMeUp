@@ -75,7 +75,13 @@ const UserSlice = createSlice({
     specialities: [],
   },
   reducers: {
-    getdata: (state, action) => { state.data = action.payload; },
+    getdata: (state, action) => {
+      const { payload } = action;
+      return {
+        ...state,
+        data: payload,
+      };
+    },
     signout: () => ({ token: '', data: {}, specialities: [] }),
     updatedata: (state, action) => ({
       ...state,

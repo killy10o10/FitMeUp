@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { specialityForm } from '../auth/Auth';
+import { specialityForm } from '../auth/Auth';
 import { deleteSpecialityThunk } from '../redux/tokenSlice';
 
 const Speciality = () => {
@@ -25,7 +25,7 @@ const Speciality = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // specialityForm(state, data.token, dispatch);
+    specialityForm(state, data.token, dispatch);
   };
 
   return (

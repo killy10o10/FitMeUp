@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { specialityForm } from '../auth/Auth';
+// import { specialityForm } from '../auth/Auth';
+import { deleteSpecialityThunk } from '../redux/tokenSlice';
 
 const Speciality = () => {
   const dispatch = useDispatch();
@@ -10,7 +11,10 @@ const Speciality = () => {
   });
 
   const data = useSelector((state) => state.currentuser);
-  console.log('Killy Bro....', data);
+
+  const deleteSpecilityHandler = (obj) => {
+    dispatch(deleteSpecialityThunk(obj));
+  };
 
   const handleChange = (e) => {
     setState((prevState) => ({
@@ -21,7 +25,7 @@ const Speciality = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    specialityForm(state, data.token, dispatch);
+    // specialityForm(state, data.token, dispatch);
   };
 
   return (
@@ -39,7 +43,7 @@ const Speciality = () => {
         {data.specialities.map((el) => (
           <div key={el.id} className="d-flex justify-content-between mb-3 border-bottom pb-2">
             <p>{el.name}</p>
-            <button className="btn btn-danger" type="button">Delete</button>
+            <button className="btn btn-danger" type="button" onClick={() => deleteSpecilityHandler({ id: el.id, token: data.token })}>Delete</button>
           </div>
         ))}
       </div>

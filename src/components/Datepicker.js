@@ -24,6 +24,7 @@ const Datepickers = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     bookTrainer(bookState, user.token);
+    displayHandlerProp();
     // eslint-disable-next-line no-console
     console.warn('Appoiment booked');
   };

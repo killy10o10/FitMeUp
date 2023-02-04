@@ -2,7 +2,6 @@
 /* eslint no-return-await: "error" */
 
 import { appenddata } from '../redux/fitMeUpSlice';
-import { appendspecial } from '../redux/specilatiySlice';
 
 export const signupUser = async (data) => (
   await (await fetch('http://127.0.0.1:3001/api/v1/users', {
@@ -83,18 +82,18 @@ export const bookTrainer = async (data, token) => (
 //   });
 // });
 
-export const specialityForm = async (data, token, dispatch) => {
-  const res = await (await fetch('http://127.0.0.1:3001/api/v1/specialities', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-      Authorization: token,
-    },
-    body: JSON.stringify(data),
-  })).json();
+// export const specialityForm = async (data, token, dispatch) => {
+//   const res = await (await fetch('http://127.0.0.1:3001/api/v1/specialities', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//       Accept: 'application/json',
+//       Authorization: token,
+//     },
+//     body: JSON.stringify(data),
+//   })).json();
 
-  if (res.id) dispatch(appendspecial(res));
+//   if (res.id) dispatch(appendspecial(res));
 
-  return res;
-};
+//   return res;
+// };

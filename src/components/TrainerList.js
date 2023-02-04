@@ -16,7 +16,6 @@ const breakPoints = [
 const TrainerList = (props) => {
   const { trainers } = props;
   const trainerCardBackgroundColors = getBackgroundColor(trainers.length);
-  const currentUser = useSelector((state) => state.currentuser);
   const trainerCard = trainers.map((item, index) => {
     const { full_name, profile_pic, bio } = item;
     const limitedBio = bio ? bio.split(' ').slice(0, 15).join(' ') : '';

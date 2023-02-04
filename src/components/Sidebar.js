@@ -5,6 +5,7 @@ import {
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { SpecialityThunk } from '../redux/tokenSlice';
+import { UserUpdateThunk } from '../redux/tokenSlice';
 import Socials from './Socials';
 import logo from '../images/fitmeup-logo.svg';
 import logoutUser from '../auth/login';
@@ -19,6 +20,10 @@ const Sidebars = () => {
 
   const handleClick = () => {
     collapseSidebar();
+  };
+
+  const handleClickUpdate = () => {
+    dispatch(UserUpdateThunk(user.token));
   };
 
   return (
@@ -75,7 +80,7 @@ const Sidebars = () => {
                 <MenuItem
                   className="sidebar-component-item"
                   component={<Link to="/appointment-details" />}
-                  onClick={handleClick}
+                  onClick={handleClickUpdate}
                 >
                   Appoint. Details
                 </MenuItem>

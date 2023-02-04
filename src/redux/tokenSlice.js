@@ -1,9 +1,23 @@
-/* eslint no-param-reassign: "error" */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-// import { SpecialityThunk } from './specilatiySlice';
-// import { loginUser } from '../auth/Auth';
 
 const SpecialityApiUrl = 'http://127.0.0.1:3001/api/v1/specialities';
+
+export const deleteSpecialityThunk = createAsyncThunk('/delete/speciality', async (obj) => {
+  const { token, id } = obj;
+  const result = await (await fetch(`${SpecialityApiUrl}/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      Authorization: token,
+
+    },
+  })).json();
+  return {
+    ...result,
+    id,
+  };
+});
 
 export const getUser = createAsyncThunk('/jcjdc/adahgshs', async (item) => {
   const result = await (await fetch('http://127.0.0.1:3001/api/v1/secure/auth_login', {
@@ -53,7 +67,7 @@ export const getUser = createAsyncThunk('/jcjdc/adahgshs', async (item) => {
   };
 });
 
-export const UserSlice = createSlice({
+const UserSlice = createSlice({
   name: 'user',
   initialState: {
     token: '',
@@ -62,18 +76,23 @@ export const UserSlice = createSlice({
   },
   reducers: {
     getdata: (state, action) => { state.data = action.payload; },
-    // settoken: (state, action) => { state.token = action.payload; },
-    // appendappointment: (state, action) => {
-    //   return {...state,
-    //     state.data.appointments: [...state.data.appointments,action.payload]
-    //   }
-    // },
-    signout: () => ({ token: '', data: {} }),
+    signout: () => ({ token: '', data: {}, specialities: [] }),
+    updatedata: (state, action) => ({
+      ...state,
+      specialities: action.payload,
+    }),
   },
   extraReducers: (builder) => {
     builder.addCase(getUser.fulfilled, (state, action) => {
       const { payload } = action;
       return payload;
+    });
+    builder.addCase(deleteSpecialityThunk.fulfilled, (state, action) => {
+      const specialities = state.specialities.filter((each) => each.id !== action.payload.id);
+      return {
+        ...state,
+        specialities,
+      };
     });
   },
 });
@@ -83,21 +102,3 @@ export const {
 } = UserSlice.actions;
 
 export default UserSlice.reducer;
-
-// export function fetchdata(item) {
-//   return async function fetchdataThunk(dispatch) {
-//       };
-// }
-
-// export const fetchUser = createAsyncThunk('/ashasghdsgd', async ({ dispatch, item }) => {
-//   try {
-//     if (token !== 'unauthorized') {
-//       const data = await loginUser(token);
-//       dispatch(getdata(data));
-//       if (data.role === 'admin') dispatch(SpecialityThunk(token));
-//     }
-//   } catch (error) {
-//     // eslint-disable-next-line no-console
-//     console.warn('Unauthorized');
-//   }
-// });

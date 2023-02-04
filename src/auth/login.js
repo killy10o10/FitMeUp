@@ -1,8 +1,7 @@
-import { getdata, settoken } from '../redux/tokenSlice';
+import { signout } from '../redux/tokenSlice';
 
 const logoutUser = (dispatch) => {
-  dispatch(settoken(null));
-  dispatch(getdata(null));
+  dispatch(signout());
 };
 
 export default logoutUser;

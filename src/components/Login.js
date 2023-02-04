@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
-import { fetchdata } from '../redux/tokenSlice';
+import { getUser } from '../redux/tokenSlice';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -10,7 +10,6 @@ const Login = () => {
     username: '',
     password: '',
   });
-
   const handleChange = (e) => {
     setState((prevState) => ({
       ...prevState,
@@ -27,7 +26,7 @@ const Login = () => {
       password: state.password,
     };
     if (state.username.length !== 0 && state.password.length !== 0) {
-      dispatch(fetchdata(item));
+      dispatch(getUser(item));
       navigate('/');
     } else {
       onsubmit = false;

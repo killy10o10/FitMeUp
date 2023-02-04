@@ -3,6 +3,7 @@ import {
   Sidebar, Menu, MenuItem, useProSidebar,
 } from 'react-pro-sidebar';
 import { useSelector, useDispatch } from 'react-redux';
+import { UserUpdateThunk } from '../redux/tokenSlice';
 import Socials from './Socials';
 import logo from '../images/fitmeup-logo.svg';
 import logoutUser from '../auth/login';
@@ -11,9 +12,16 @@ const Sidebars = () => {
   const { collapseSidebar, collapsed } = useProSidebar();
   const user = useSelector((state) => state.currentuser);
   const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(SpecialityThunk(user.token));
+  // }, [dispatch, user]);
 
   const handleClick = () => {
     collapseSidebar();
+  };
+
+  const handleClickUpdate = () => {
+    dispatch(UserUpdateThunk(user.token));
   };
 
   return (
@@ -70,7 +78,7 @@ const Sidebars = () => {
                 <MenuItem
                   className="sidebar-component-item"
                   component={<Link to="/appointment-details" />}
-                  onClick={handleClick}
+                  onClick={handleClickUpdate}
                 >
                   Appoint. Details
                 </MenuItem>

@@ -33,8 +33,14 @@
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 FitMeUP <a name="about-project"></a>
-
 **Fit me up frontend** is a react-based application that enables a given user to book a trainer and it consumes an api defined in the project:  [Fit Me Up Backend](https://github.com/barakadanny/FitMeUp-Backend). On top of this it also supports admin users to manage trainers that is creating and removing of the different trainers.
+
+
+##### Please use  Port 3001 in backend
+
+`
+rails s -p 3001
+`
 
 ## 🛠 Built With <a name="built-with"></a>
 

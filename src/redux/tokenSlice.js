@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const SpecialityApiUrl = 'http://127.0.0.1:3001/api/v1/specialities';
+const SpecialityApiUrl = 'https://fitmeup.onrender.com/api/v1/specialities';
 
 export const deleteSpecialityThunk = createAsyncThunk('/delete/speciality', async (obj) => {
   const { token, id } = obj;
@@ -20,7 +20,7 @@ export const deleteSpecialityThunk = createAsyncThunk('/delete/speciality', asyn
 });
 
 export const getUser = createAsyncThunk('/jcjdc/adahgshs', async (item) => {
-  const result = await (await fetch('http://127.0.0.1:3001/api/v1/secure/auth_login', {
+  const result = await (await fetch('https://fitmeup.onrender.com/api/v1/secure/auth_login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ export const getUser = createAsyncThunk('/jcjdc/adahgshs', async (item) => {
   })).json();
 
   if (result.token !== undefined) {
-    const user = (await (await fetch('http://127.0.0.1:3001/api/v1/users', {
+    const user = (await (await fetch('https://fitmeup.onrender.com/api/v1/users', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ export const getUser = createAsyncThunk('/jcjdc/adahgshs', async (item) => {
 });
 
 export const UserUpdateThunk = createAsyncThunk('/get/updated_user', async (token) => {
-  const user = (await (await fetch('http://127.0.0.1:3001/api/v1/users', {
+  const user = (await (await fetch('https://fitmeup.onrender.com/api/v1/users', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

@@ -3,18 +3,26 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 100%;
+  height: 100vh;
   color: #fff;
 }
 
 .sign-orange {
-  height: 100%;
+  height: 100vh;
   background-color: #245e85c9;
 }
 
 .sign-form {
-  width: 350px;
   background-color: #7e9f07b8;
   padding: 15px;
   border-radius: 15px;
+  width: 50vw;
+}
+
+.iput-group {
+  display: flex;
+}
+
+.input-group :first-child  {
+  margin-right: 15px;
 }

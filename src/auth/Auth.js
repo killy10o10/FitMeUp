@@ -4,7 +4,7 @@
 import { appenddata } from '../redux/fitMeUpSlice';
 
 export const signupUser = async (data) => (
-  await (await fetch('http://127.0.0.1:3001/api/v1/users', {
+  await (await fetch('https://fitmeup.onrender.com/api/v1/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -17,7 +17,7 @@ export const signupUser = async (data) => (
 // export const loginUser = async (token) =>
 
 export const trainerForm = async (data, token, dispatch) => {
-  const res = await (await fetch('http://127.0.0.1:3001/api/v1/users', {
+  const res = await (await fetch('https://fitmeup.onrender.com/api/v1/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ export const trainerForm = async (data, token, dispatch) => {
 };
 
 export const bookTrainer = async (data, token) => (
-  await (await fetch('http://127.0.0.1:3001/api/v1/appointments', {
+  await (await fetch('https://fitmeup.onrender.com/api/v1/appointments', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ export const bookTrainer = async (data, token) => (
 );
 
 export const specialityForm = async (data, token) => {
-  const res = await (await fetch('http://127.0.0.1:3001/api/v1/specialities', {
+  const res = await (await fetch('https://fitmeup.onrender.com/api/v1/specialities', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
